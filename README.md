@@ -25,7 +25,12 @@ To view the whole web app, check out the Proxy Server for Full Listing link belo
 
 ## Usage
 
->
+>Start the database
+```
+mongod
+```
+
+
 
 ## Requirements
 
