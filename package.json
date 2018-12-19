@@ -1,0 +1,27 @@
+{
+  "name": "image-carousel-component",
+  "version": "1.0.0",
+  "description": "Image Carousel Component for StreetEasy Style Item Listing Page",
+  "main": "/server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Elysium/image-carousel-component.git"
+  },
+  "author": "Jared Ellison",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Team-Elysium/image-carousel-component/issues"
+  },
+  "homepage": "https://github.com/Team-Elysium/image-carousel-component#readme",
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.15.3"
+  }
+}
