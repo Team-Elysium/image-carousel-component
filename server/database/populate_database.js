@@ -5,7 +5,7 @@
 /////////////////////////////////////////
 //  Import database Model
 
-const db = require('./schema.js');
+const { ListingImages } = require('./schema.js');
 
 ////////////////////////////////////////
 //  Import URL Data in JSON format
@@ -33,7 +33,7 @@ const generateNListings = n => {
 
 // Produce a specific listing model
 const generateListing = (id, tier) => {
-  let listing = new db.ListingImages();
+  let listing = new ListingImages();
   // Attach an id and tier
   listing.id = id;
   listing.tier = tier;
@@ -124,26 +124,25 @@ const getApartmentPhotosByTier = tier => {
 //
 //    Main Action
 
-
 const TOTAL_LISTINGS = 100;
 
 // Create listings
 let listings = generateNListings(TOTAL_LISTINGS);
 
 // Clear out all prexisting models in the database
-db.ListingImages.deleteMany()
-.then((result) => {
-  console.log("Cleared previous database listing entries");
-  // Save new listings to db
-  return Promise.all(
-    listings.map(e => {
-      e.save();
-    })
-  );
-})
-.then(() => {
-  console.log("Updated database with new randomized listing entries");
-})
-.catch((err) => {
-  console.log('Error updating database', err);
-});
+ListingImages.deleteMany()
+  .then(result => {
+    console.log('Cleared previous database listing entries');
+    // Save new listings to db
+    return Promise.all(
+      listings.map(e => {
+        e.save();
+      })
+    );
+  })
+  .then(() => {
+    console.log('Updated database with new randomized listing entries');
+  })
+  .catch(err => {
+    console.log('Error updating database', err);
+  });

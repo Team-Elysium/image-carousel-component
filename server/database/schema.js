@@ -1,27 +1,12 @@
 ////////////////////////////////////////////////////////////
 //
-//    Connect to DB and Export Connection, Schema And Listing Model
+//    Create and Export Database Schema And Listing Model
 
 /////////////////////////////////////////
 //  Import dependencies and connect to db
 
+const db = require('./index.js');
 const mongoose = require('mongoose');
-
-mongoose.Promise = Promise;
-
-mongoose.connect(
-  'mongodb://localhost/listingImages',
-  { useNewUrlParser: true }
-);
-
-const connection = mongoose.connection;
-
-connection.on('error', err => {
-  console.log('Error connecting to database', err);
-});
-connection.once('open', () => {
-  console.log('Successfully connected to database');
-});
 
 ////////////////////////////////////////
 //  Define Schema and create model
@@ -45,6 +30,5 @@ const listingImagesSchema = new mongoose.Schema({
 // Model
 const ListingImages = mongoose.model('ListingImages', listingImagesSchema);
 
-module.exports.connection = connection;
 module.exports.listingImagesSchema = listingImagesSchema;
 module.exports.ListingImages = ListingImages;
