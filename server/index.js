@@ -19,7 +19,7 @@ const path = require('path');
 const app = express();
 
 // Import Database Connection
-const db = require('./database/index.js')
+const db = require('../database/index.js');
 
 // Apply middleware
 app.use(morgan('dev'));
@@ -36,13 +36,13 @@ app.get('/api/:id', (req, res) => {
   const id = req.params.id;
 
   db.getById(id)
-    .then((result) => {
+    .then(result => {
       res.json(result);
     })
-    .catch((err) => {
-      console.log('Error running db.getById:',err);
+    .catch(err => {
+      console.log('Error running db.getById:', err);
       res.sendStatus(500);
-    })
+    });
 });
 
 ////////////////////
