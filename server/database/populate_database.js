@@ -46,6 +46,11 @@ const generateListing = (id, tier) => {
   return listing;
 };
 
+// Get a random integer between greater than a and b inclusive
+const rnd = (a,b) => {
+  return Math.floor(Math.random() * (b - a + 1)) + a;
+};
+
 // This function is used to pick a random selection of photos from an array
 // without repeating elements. If n is greater than the length of the array, the
 // function returns the whole array in random order. The default n is 1.
@@ -54,9 +59,10 @@ const getRandomElements = (array, n = 1) => {
   let results = [];
   let prevIndices = [];
 
-  while(results.length < targetLength) {
+  while (results.length < targetLength) {
     randomIndex = Math.floor(array.length * Math.random());
     if (!prevIndices.includes(randomIndex)) {
+      prevIndices.push(randomIndex);
       results.push(array[randomIndex]);
     }
   }
@@ -67,51 +73,40 @@ const getRandomElements = (array, n = 1) => {
 const getApartmentPhotosByTier = tier => {
   let photos = [];
 
-  // Each apt has one exterior photo
-  photos.push(getRandomElements(apartmentUrls.exterior));
-
   if (tier === 0) {
-    // Kitchen and bedroom only
-    photos.push(getRandomElements(apartmentUrls.kitchen));
-
-    photos.push(getRandomElements(apartmentUrls.bedroom));
+    // Modest listing
+    photos = photos
+      .concat(getRandomElements(apartmentUrls.tier0.exterior))
+      .concat(getRandomElements(apartmentUrls.tier0.kitchen, rnd(0,1)))
+      .concat(getRandomElements(apartmentUrls.tier0.bedroom, rnd(0,2)));
   }
 
   if (tier === 1) {
-    // Kitchen, bedroom, bathroom, livingroom
-    photos.push(getRandomElements(apartmentUrls.kitchen));
-
-    photos.push(getRandomElements(apartmentUrls.bedroom));
-
-    photos.push(getRandomElements(apartmentUrls.bathroom));
-
-    photos.push(getRandomElements(apartmentUrls.livingroom));
+    photos = photos
+      .concat(getRandomElements(apartmentUrls.tier1.exterior))
+      .concat(getRandomElements(apartmentUrls.tier1.kitchen, rnd(0,1)))
+      .concat(getRandomElements(apartmentUrls.tier1.bathroom, rnd(1,1)))
+      .concat(getRandomElements(apartmentUrls.tier1.bedroom, rnd(1,2)))
+      .concat(getRandomElements(apartmentUrls.tier1.amenities, rnd(1,2)));
   }
 
   if (tier === 2) {
-    // Kitchen, 2 bedrooms, bathroom, livingroom, garden
-    photos.push(getRandomElements(apartmentUrls.kitchen));
-
-    photos.concat(getRandomElements(apartmentUrls.bedroom, 2));
-
-    photos.push(getRandomElements(apartmentUrls.bathroom));
-
-    photos.push(getRandomElements(apartmentUrls.livingroom));
-
-    photos.push(getRandomElements(apartmentUrls.garden));
+    photos = photos
+      .concat(getRandomElements(apartmentUrls.tier2.exterior))
+      .concat(getRandomElements(apartmentUrls.tier2.kitchen, rnd(1,2)))
+      .concat(getRandomElements(apartmentUrls.tier2.bedroom, rnd(1,3)))
+      .concat(getRandomElements(apartmentUrls.tier2.bathroom, rnd(0,3)))
+      .concat(getRandomElements(apartmentUrls.tier2.amenities, rnd(0,4)));
   }
 
   if (tier === 3) {
-    // Lots of everything
-    photos.push(getRandomElements(apartmentUrls.kitchen));
-
-    photos.concat(getRandomElements(apartmentUrls.bedroom, 4));
-
-    photos.concat(getRandomElements(apartmentUrls.bathroom, 2));
-
-    photos.concat(getRandomElements(apartmentUrls.livingroom, 3));
-
-    photos.push(getRandomElements(apartmentUrls.garden));
+    // Very deluxe listing
+    photos = photos
+      .concat(getRandomElements(apartmentUrls.tier3.exterior))
+      .concat(getRandomElements(apartmentUrls.tier3.kitchen, rnd(1,3)))
+      .concat(getRandomElements(apartmentUrls.tier3.bedroom, rnd(2,5)))
+      .concat(getRandomElements(apartmentUrls.tier3.bathroom, rnd(1,4)))
+      .concat(getRandomElements(apartmentUrls.tier3.amenities, rnd(3,6)));
   }
 
   return photos;
@@ -136,10 +131,10 @@ ListingImages.deleteMany({}, err => {
       e.save();
     })
   )
-  .then(() => {
-    console.log('Updated database with new randomized listing entries');
-  })
-  .catch(err => {
-    console.log('Error saving to database', err);
-  });
+    .then(() => {
+      console.log('Updated database with new randomized listing entries');
+    })
+    .catch(err => {
+      console.log('Error saving to database', err);
+    });
 });
