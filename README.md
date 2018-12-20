@@ -34,8 +34,6 @@ mongod
 
 - Note that this project makes use of the MapBox API to access static map images. To get an API key visit: https://www.mapbox.com/
 
-
-
 ## Development
 
 ### Installing Dependencies
