@@ -25,11 +25,14 @@ To view the whole web app, check out the Proxy Server for Full Listing link belo
 
 ## Usage
 
->
+>Start the database
+```
+mongod
+```
 
 ## Requirements
 
-
+- Note that this project makes use of the MapBox API to access static map images. To get an API key visit: https://www.mapbox.com/
 
 ## Development
 
