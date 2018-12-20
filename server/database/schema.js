@@ -5,8 +5,9 @@
 /////////////////////////////////////////
 //  Import dependencies and connect to db
 
-const db = require('./index.js');
 const mongoose = require('mongoose');
+
+mongoose.Promise = Promise;
 
 ////////////////////////////////////////
 //  Define Schema and create model
@@ -14,17 +15,9 @@ const mongoose = require('mongoose');
 // Schema
 const listingImagesSchema = new mongoose.Schema({
   id: { type: Number, Unique: true },
-  tier: Number,
-  mapUrl: String,
-  floorPlanUrl: String,
-  apartmentUrls: {
-    exterior: [String],
-    kitchen: [String],
-    bedroom: [String],
-    bathroom: [String],
-    livingroom: [String],
-    garden: [String]
-  }
+  map: String,
+  floorPlan: String,
+  photos: [String]
 });
 
 // Model

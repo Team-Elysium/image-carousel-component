@@ -5,6 +5,7 @@
 /////////////////////////////////////////
 //  Import database Model
 
+const { db } = require('./index.js');
 const { ListingImages } = require('./schema.js');
 
 ////////////////////////////////////////
@@ -36,85 +37,81 @@ const generateListing = (id, tier) => {
   let listing = new ListingImages();
   // Attach an id and tier
   listing.id = id;
-  listing.tier = tier;
   // Attach a map Url
-  listing.mapUrl = getRandomElement(mapUrls.urls);
+  listing.map = getRandomElements(mapUrls.urls);
   // Attach a floor plan url
-  listing.floorPlanUrl = getRandomElement(floorPlanUrls.urls);
+  listing.floorPlan = getRandomElements(floorPlanUrls.urls);
   // Attach apartment photos
-  listing.apartmentUrls = getApartmentPhotosByTier(tier);
+  listing.photos = getApartmentPhotosByTier(tier);
   return listing;
 };
 
-// Randomizng photos
-const getRandomElement = array => {
-  let randomIndex = Math.floor(array.length * Math.random());
-  return array[randomIndex];
+// This function is used to pick a random selection of photos from an array
+// without repeating elements. If n is greater than the length of the array, the
+// function returns the whole array in random order. The default n is 1.
+const getRandomElements = (array, n = 1) => {
+  let targetLength = Math.min(array.length, n);
+  let results = [];
+  let prevIndices = [];
+
+  while(results.length < targetLength) {
+    randomIndex = Math.floor(array.length * Math.random());
+    if (!prevIndices.includes(randomIndex)) {
+      results.push(array[randomIndex]);
+    }
+  }
+
+  return results;
 };
 
 const getApartmentPhotosByTier = tier => {
-  let photos = {
-    exterior: [],
-    kitchen: [],
-    bedroom: [],
-    bathroom: [],
-    livingroom: [],
-    garden: []
-  };
+  let photos = [];
 
   // Each apt has one exterior photo
-  photos.exterior.push(getRandomElement(apartmentUrls.exterior));
-  // Each apt has one exterior photo
+  photos.push(getRandomElements(apartmentUrls.exterior));
 
   if (tier === 0) {
     // Kitchen and bedroom only
-    photos.kitchen.push(getRandomElement(apartmentUrls.kitchen));
+    photos.push(getRandomElements(apartmentUrls.kitchen));
 
-    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+    photos.push(getRandomElements(apartmentUrls.bedroom));
   }
 
   if (tier === 1) {
     // Kitchen, bedroom, bathroom, livingroom
-    photos.kitchen.push(getRandomElement(apartmentUrls.kitchen));
+    photos.push(getRandomElements(apartmentUrls.kitchen));
 
-    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+    photos.push(getRandomElements(apartmentUrls.bedroom));
 
-    photos.bathroom.push(getRandomElement(apartmentUrls.bathroom));
+    photos.push(getRandomElements(apartmentUrls.bathroom));
 
-    photos.livingroom.push(getRandomElement(apartmentUrls.livingroom));
+    photos.push(getRandomElements(apartmentUrls.livingroom));
   }
 
   if (tier === 2) {
     // Kitchen, 2 bedrooms, bathroom, livingroom, garden
-    photos.kitchen.push(getRandomElement(apartmentUrls.kitchen));
+    photos.push(getRandomElements(apartmentUrls.kitchen));
 
-    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
-    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+    photos.concat(getRandomElements(apartmentUrls.bedroom, 2));
 
-    photos.bathroom.push(getRandomElement(apartmentUrls.bathroom));
+    photos.push(getRandomElements(apartmentUrls.bathroom));
 
-    photos.livingroom.push(getRandomElement(apartmentUrls.livingroom));
+    photos.push(getRandomElements(apartmentUrls.livingroom));
 
-    photos.garden.push(getRandomElement(apartmentUrls.garden));
+    photos.push(getRandomElements(apartmentUrls.garden));
   }
 
   if (tier === 3) {
     // Lots of everything
-    photos.kitchen.push(getRandomElement(apartmentUrls.kitchen));
+    photos.push(getRandomElements(apartmentUrls.kitchen));
 
-    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
-    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
-    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
-    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+    photos.concat(getRandomElements(apartmentUrls.bedroom, 4));
 
-    photos.bathroom.push(getRandomElement(apartmentUrls.bathroom));
-    photos.bathroom.push(getRandomElement(apartmentUrls.bathroom));
+    photos.concat(getRandomElements(apartmentUrls.bathroom, 2));
 
-    photos.livingroom.push(getRandomElement(apartmentUrls.livingroom));
-    photos.livingroom.push(getRandomElement(apartmentUrls.livingroom));
-    photos.livingroom.push(getRandomElement(apartmentUrls.livingroom));
+    photos.concat(getRandomElements(apartmentUrls.livingroom, 3));
 
-    photos.garden.push(getRandomElement(apartmentUrls.garden));
+    photos.push(getRandomElements(apartmentUrls.garden));
   }
 
   return photos;
@@ -130,19 +127,19 @@ const TOTAL_LISTINGS = 100;
 let listings = generateNListings(TOTAL_LISTINGS);
 
 // Clear out all prexisting models in the database
-ListingImages.deleteMany()
-  .then(result => {
-    console.log('Cleared previous database listing entries');
-    // Save new listings to db
-    return Promise.all(
-      listings.map(e => {
-        e.save();
-      })
-    );
-  })
+ListingImages.deleteMany({}, err => {
+  if (err) return console.log('Error updating database', err);
+  console.log('Cleared previous database listing entries');
+  // Save new listings to db
+  Promise.all(
+    listings.map(e => {
+      e.save();
+    })
+  )
   .then(() => {
     console.log('Updated database with new randomized listing entries');
   })
   .catch(err => {
-    console.log('Error updating database', err);
+    console.log('Error saving to database', err);
   });
+});
