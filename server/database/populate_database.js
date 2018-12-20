@@ -6,8 +6,7 @@
 //  Import database Model
 
 // Import db to create a database connection
-const { db } = require('./index.js');
-const { ListingImages } = require('./schema.js');
+const db = require('./index.js');
 
 ////////////////////////////////////////
 //  Import URL Data in JSON format
@@ -35,7 +34,7 @@ const generateNListings = n => {
 
 // Produce a specific listing model
 const generateListing = (id, tier) => {
-  let listing = new ListingImages();
+  let listing = new db.ListingImages();
   // Attach an id and tier
   listing.id = id;
   // Attach a map Url
@@ -136,7 +135,7 @@ const TOTAL_LISTINGS = 100;
 let listings = generateNListings(TOTAL_LISTINGS);
 
 // Clear out all prexisting models in the database
-ListingImages.deleteMany({}, err => {
+db.ListingImages.deleteMany({}, err => {
   if (err) return console.log('Error updating database', err);
   console.log('Cleared previous database listing entries');
   // Save new listings to db
@@ -148,7 +147,7 @@ ListingImages.deleteMany({}, err => {
     .then(() => {
       console.log('Updated database with new randomized listing entries');
       // Close db connection when done saving all models
-      db.close();
+      db.connection.close();
     })
     .catch(err => {
       console.log('Error saving to database', err);

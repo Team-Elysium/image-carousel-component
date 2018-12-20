@@ -2,6 +2,9 @@
 //
 //    Connect to DB and Export Connection
 
+// db is an object who's keys define the interface to the database
+const db = {};
+
 /////////////////////////////////////////
 //  Import ORM and connect to db
 
@@ -14,13 +17,21 @@ mongoose.connect(
   { useNewUrlParser: true }
 );
 
-const db = mongoose.connection;
+// Expose database connection
+db.connection = mongoose.connection;
 
-db.on('error', err => {
+db.connection.on('error', err => {
   console.log('Error connecting to database', err);
 });
-db.once('open', () => {
+db.connection.once('open', () => {
   console.log('Successfully connected to database');
 });
 
-module.exports.db = db;
+
+// Import schema and expose them on the db object
+const { ListingImages, listingImagesSchema } = require('./schema.js');
+
+db.ListingImages = ListingImages;
+db.listingImagesSchema = listingImagesSchema;
+
+module.exports = db;
