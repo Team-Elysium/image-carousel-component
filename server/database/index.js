@@ -27,11 +27,15 @@ db.connection.once('open', () => {
   console.log('Successfully connected to database');
 });
 
-
-// Import schema and expose them on the db object
+// Import schema and module then expose them on the db object
 const { ListingImages, listingImagesSchema } = require('./schema.js');
 
 db.ListingImages = ListingImages;
 db.listingImagesSchema = listingImagesSchema;
+
+// Define controller functions
+db.getById = id => {
+  return ListingImages.findOne({ id: id }).exec();
+};
 
 module.exports = db;
