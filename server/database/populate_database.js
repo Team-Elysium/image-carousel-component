@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
 //
 //    Script to Generate Mock Data
 
@@ -7,18 +7,12 @@
 
 const db = require('./schema.js');
 
-// Database Schema Definition for reference:
-// id: { type: Number, Unique: true },
-// mapUrl: String,
-// floorPlanUrl: String,
-// apartmentUrls: {
-//   exterior: [String],
-//   kitchen: [String],
-//   bedroom: [String],
-//   bathroom: [String],
-//   livingroom: [String],
-//   garden: [String]
-// }
+////////////////////////////////////////
+//  Import URL Data in JSON format
+
+const mapUrls = require('./sample_data/map_images.json');
+const floorPlanUrls = require('./sample_data/floor_plan_images.json');
+const apartmentUrls = require('./sample_data/apartment_images.json');
 
 ////////////////////////////////////////
 //  Helper Functions
@@ -40,34 +34,91 @@ const generateNListings = n => {
 // Produce a specific listing model
 const generateListing = (id, tier) => {
   let listing = new db.ListingImages();
-  // Attach an id
+  // Attach an id and tier
   listing.id = id;
+  listing.tier = tier;
   // Attach a map Url
-  listing.mapUrl = getRandomMap();
+  listing.mapUrl = getRandomElement(mapUrls.urls);
   // Attach a floor plan url
-  listing.floorPlanUrl = getRandomFloorplan();
+  listing.floorPlanUrl = getRandomElement(floorPlanUrls.urls);
   // Attach apartment photos
-  listing.apartmentUrls = getApartmentPhotosByTier(teir);
+  listing.apartmentUrls = getApartmentPhotosByTier(tier);
   return listing;
 };
 
 // Randomizng photos
-const getRandomMap = () => {};
-
-const getRandomFloorplan = () => {};
+const getRandomElement = array => {
+  let randomIndex = Math.floor(array.length * Math.random());
+  return array[randomIndex];
+};
 
 const getApartmentPhotosByTier = tier => {
-  let photos = {};
+  let photos = {
+    exterior: [],
+    kitchen: [],
+    bedroom: [],
+    bathroom: [],
+    livingroom: [],
+    garden: []
+  };
+
+  // Each apt has one exterior photo
+  photos.exterior.push(getRandomElement(apartmentUrls.exterior));
+  // Each apt has one exterior photo
+
+  if (tier === 0) {
+    // Kitchen and bedroom only
+    photos.kitchen.push(getRandomElement(apartmentUrls.kitchen));
+
+    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+  }
+
+  if (tier === 1) {
+    // Kitchen, bedroom, bathroom, livingroom
+    photos.kitchen.push(getRandomElement(apartmentUrls.kitchen));
+
+    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+
+    photos.bathroom.push(getRandomElement(apartmentUrls.bathroom));
+
+    photos.livingroom.push(getRandomElement(apartmentUrls.livingroom));
+  }
+
+  if (tier === 2) {
+    // Kitchen, 2 bedrooms, bathroom, livingroom, garden
+    photos.kitchen.push(getRandomElement(apartmentUrls.kitchen));
+
+    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+
+    photos.bathroom.push(getRandomElement(apartmentUrls.bathroom));
+
+    photos.livingroom.push(getRandomElement(apartmentUrls.livingroom));
+
+    photos.garden.push(getRandomElement(apartmentUrls.garden));
+  }
+
+  if (tier === 3) {
+    // Lots of everything
+    photos.kitchen.push(getRandomElement(apartmentUrls.kitchen));
+
+    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+    photos.bedroom.push(getRandomElement(apartmentUrls.bedroom));
+
+    photos.bathroom.push(getRandomElement(apartmentUrls.bathroom));
+    photos.bathroom.push(getRandomElement(apartmentUrls.bathroom));
+
+    photos.livingroom.push(getRandomElement(apartmentUrls.livingroom));
+    photos.livingroom.push(getRandomElement(apartmentUrls.livingroom));
+    photos.livingroom.push(getRandomElement(apartmentUrls.livingroom));
+
+    photos.garden.push(getRandomElement(apartmentUrls.garden));
+  }
 
   return photos;
 };
-
-////////////////////////////////////////
-//  Import URL Data in JSON format
-
-const mapUrls = require('./sample_data/map_images.json');
-const floorPlanUrls = require('./sample_data/floor_plan_images.json');
-const apartmentUrls = require('./sample_data/apartment_images.json');
 
 ////////////////////////////////////////////////////////////
 //
@@ -79,6 +130,6 @@ const TOTAL_LISTINGS = 100;
 let listings = generateNListings(TOTAL_LISTINGS);
 
 // Save listings to db
-// listings.forEach(e => {
-//   e.save();
-// });
+listings.forEach(e => {
+  e.save();
+});

@@ -1,0 +1,15 @@
+{
+  "urls":[
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-73.98507,40.72416,12.5,0,0/1148x800?access_token=",
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-73.94944,40.81563,12.5,0,0/1148x800?access_token=",
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-73.89380,40.85395,12.5,0,0/1148x800?access_token=",
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-73.91730,40.75732,12.5,0,0/1148x800?access_token=",
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-74.02046,40.62848,12.5,0,0/1148x800?access_token=",
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-73.99795,40.60503,12.5,0,0/1148x800?access_token=",
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-74.02046,40.62848,12.5,0,0/1148x800?access_token=",
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-73.95432,40.71193,12.5,0,0/1148x800?access_token=",
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-74.07869,40.63901,12.5,0,0/1148x800?access_token=",
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-74.01026,40.71694,12.5,0,0/1148x800?access_token=",
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-73.87917,40.74538,12.5,0,0/1148x800?access_token="
+  ]
+}
