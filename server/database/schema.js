@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = Promise;
 
 mongoose.connect(
-  'mongodb://localhost/listing-images',
+  'mongodb://localhost/listingImages',
   { useNewUrlParser: true }
 );
 
@@ -29,6 +29,7 @@ connection.once('open', () => {
 // Schema
 const listingImagesSchema = new mongoose.Schema({
   id: { type: Number, Unique: true },
+  tier: Number,
   mapUrl: String,
   floorPlanUrl: String,
   apartmentUrls: {
