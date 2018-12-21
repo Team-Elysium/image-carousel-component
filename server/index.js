@@ -16,6 +16,9 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+// Import API Key
+const { MAPBOX_API_KEY } = require('../config.js');
+
 const app = express();
 
 // Import Database Connection
@@ -37,7 +40,16 @@ app.get('/api/:id', (req, res) => {
 
   db.getById(id)
     .then(result => {
-      res.json(result);
+      // The database adds some extra, private properties to each entry.
+      // Explicity mapping the result of the database fetch is one way to filter
+      // the served json.
+      res.json({
+        id: result.id,
+        photos: result.photos,
+        floorPlan: result.floorPlan,
+        // Concatinate mapbox url with API key here
+        map: result.map + MAPBOX_API_KEY
+      });
     })
     .catch(err => {
       console.log('Error running db.getById:', err);
