@@ -14,10 +14,10 @@ mongoose.Promise = Promise;
 
 // Schema
 const listingImagesSchema = new mongoose.Schema({
-  id: { type: Number, Unique: true },
-  map: String,
-  floorPlan: String,
-  photos: [String]
+  id: { type: Number, unique: true, required: true },
+  map: { type: String, required: true },
+  floorPlan: { type: String, required: true },
+  photos: { type: [String], required: true }
 });
 
 // Model
