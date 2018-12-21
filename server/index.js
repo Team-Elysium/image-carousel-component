@@ -40,6 +40,9 @@ app.get('/api/:id', (req, res) => {
 
   db.getById(id)
     .then(result => {
+      // If nothing is found, respond with 404
+      if (result === null) return res.sendStatus(404);
+
       // The database adds some extra, private properties to each entry.
       // Explicity mapping the result of the database fetch is one way to filter
       // the served json.
