@@ -4,7 +4,9 @@
   "description": "Image Carousel Component for StreetEasy Style Item Listing Page",
   "main": "./server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "(mongod > /dev/null & ) && (nodemon server/ server/index.js)",
+    "start": "(mongod > /dev/null & ) && (node server/index.js)"
   },
   "repository": {
     "type": "git",
