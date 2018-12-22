@@ -2,9 +2,11 @@
   "name": "image-carousel-component",
   "version": "1.0.0",
   "description": "Image Carousel Component for StreetEasy Style Item Listing Page",
-  "main": "/server/index.js",
+  "main": "./server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "(mongod > /dev/null & ) && (nodemon server/ server/index.js)",
+    "start": "(mongod > /dev/null & ) && (node server/index.js)"
   },
   "repository": {
     "type": "git",
@@ -17,11 +19,22 @@
   },
   "homepage": "https://github.com/Team-Elysium/image-carousel-component#readme",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^5.10.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
-    "prettier": "^1.15.3"
+    "mocha": "^5.2.0",
+    "prettier": "^1.15.3",
+    "supertest": "^3.3.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.0",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7"
   }
 }

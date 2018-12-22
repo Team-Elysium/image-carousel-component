@@ -25,23 +25,52 @@ To view the whole web app, check out the Proxy Server for Full Listing link belo
 
 ## Usage
 
->Start the database
+Run npm start-dev to start the database daemon and the nodemon server which restarts whenever the server code is changed.
+
+```bash
+$ npm run start-dev
 ```
-mongod
+
+Here are a few example commands to manually inspect the MongoDB database via the Mongo shell
+
+```bash
+# Enter the mongo shell
+$ mongo
+
+# Use the project database
+> use listingImages
+
+# Show all listingimages entries
+> db.listingimages.find()
+
+# Show a specific entry
+> db.listingimages.find()[0]
+
+# Count total entries saved
+> db.listingimages.count()
+
+# Delete all entries in listingimages
+> db.listingimages.drop()
+
 ```
 
 ## Requirements
 
-- Note that this project makes use of the MapBox API to access static map images. To get an API key visit: https://www.mapbox.com/
+- Note that this project makes use of the MapBox API to access static map images. To get an API key visit: https://www.mapbox.com/signup
 
 ## Development
 
 ### Installing Dependencies
 
-From within the root directory:
+This project uses a MongoDB database, be sure that it is installed: 
+
+​	https://docs.mongodb.com/manual/installation/
+
+To install node dependencies:
 
 ```
 npm install -g webpack
 npm install
 ```
 
+The MapBox API key should be stored in a file in the root directory called `config.js`, please look at `config.example.js` .
