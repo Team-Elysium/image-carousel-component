@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 //  Serve Routes
 
 // Static Files
-app.use('/', express.static(path.join(__dirname, '../public')));
+app.use('/:id', express.static(path.join(__dirname, '../public')));
 
 // API Routes
 app.get('/api/:id', (req, res) => {
