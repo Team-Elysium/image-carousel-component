@@ -16,12 +16,13 @@ class App extends React.Component {
     // Make call to API with listingNumber
     fetch(`../api/${listingNumber}`)
       .then(data => {
-        // console.log(data.body);
-        // window.d = data;
         return data.json();
       })
       .then(json => {
         let newState = json;
+        newState.photos.push(json.floorPlan);
+        newState.photos.push(json.map);
+        newState.photoCount = json.photos.length;
         this.setState(newState);
       });
   }
@@ -35,6 +36,8 @@ class App extends React.Component {
             this.state.photos ? this.state.photos[this.state.selected] : null
           }
         />
+        <div className="arrow-button-left"></div>
+        <div className="arrow-button-right"></div>
         <div className="carousel-container">
           <ul className="thumb-list">
             {!this.state.photos
@@ -42,12 +45,14 @@ class App extends React.Component {
               : this.state.photos.map((e, i) => {
                   return (
                     <li className="thumb-item" key={i}>
-                      <img className={i === this.state.selected ? 'thumb-image thumb-selected' : 'thumb-image'} src={e} />
-                      {/* <img className={"thumb-image " + i} src={e} /> */}
+                      <img className={i === this.state.selected ? 'thumb-image thumb-selected'  : 'thumb-image'} src={e} />
                     </li>
                   );
                 })}
           </ul>
+          <div className="carousel-counter">
+            <p>{this.state.selected + 1} of {!!this.state.photos ? this.state.photoCount : '0'}</p>
+          </div>
           <div className="button-container">
             <div className="floor-plan-button">
               <span className="button-text">
