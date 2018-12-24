@@ -1,0 +1,121 @@
+/* Entire Document */
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+    url(/assets/fonts/SourceSansPro-Bold.ttf) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Carousel Area */
+
+#carousel {
+  margin: 3em;
+  width: 574px;
+  height: 446px;
+  display: block;
+  overflow: hidden;
+  border: lightgray dotted 1px;
+}
+
+.selected {
+  height: 400px;
+  width: 640px;
+  cursor: pointer;
+}
+
+/* Thumnails */
+.thumb-image {
+  height: 40px;
+  margin: 0 2px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.thumb-list {
+  white-space: nowrap;
+}
+
+.thumb-item {
+  display: inline-block;
+}
+
+.thumb-selected {
+  opacity: 1;
+}
+/* Buttons */
+
+.button-container {
+  background: white;
+  display: block;
+  top: -44px;
+  position: relative;
+  float: right;
+  padding: 0px 4px;
+}
+
+/* Floor Plan Button */
+.floor-plan-button {
+  color: #0080c6;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  height: 40px;
+  vertical-align: middle;
+  border: 1px solid #e6e6e6;
+  display: inline-block;
+}
+
+.floor-plan-button img {
+  display: inline;
+}
+
+.floor-plan-button p {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0 0px 6px 6px;
+}
+
+.button-text {
+  display: inline-block;
+  line-height: 20px;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+/* Floor Map Button */
+
+.map-button {
+  cursor: pointer;
+  height: 40px;
+  vertical-align: middle;
+  border: 1px solid #e6e6e6;
+  display: inline-block;
+  overflow: hidden;
+  width: 71px;
+  margin: 0 0 0 3px;
+}
+
+.map-button img {
+  margin-left: -153%;
+  margin-top: -102%;
+  width: 405%;
+}
