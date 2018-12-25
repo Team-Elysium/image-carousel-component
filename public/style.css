@@ -143,6 +143,7 @@ body {
   vertical-align: middle;
   border: 1px solid #e6e6e6;
   display: inline-block;
+  background-image: no-repeat url(/assets/images/floorplan-icon.svg);
 }
 
 .floor-plan-button img {
@@ -158,8 +159,10 @@ body {
 .button-text {
   display: inline-block;
   line-height: 20px;
-  padding: 10px 20px;
+  padding: 10px 16px 10px 34px;
   display: inline-block;
+  background: no-repeat url(/assets/images/floorplan-icon.svg);
+  background-position: 18px 13px;
 }
 
 /* Floor Map Button */
