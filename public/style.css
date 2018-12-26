@@ -64,11 +64,11 @@ body {
   height: 400px;
   background: white;
   display: block;
+  text-align:center;
 }
 
 .main-image {
   height: 400px;
-  position: absolute;
   transition: opacity 0.2s linear 0s;
 }
 
@@ -133,6 +133,8 @@ body {
 
 .thumb-item {
   display: inline-block;
+  text-align: center;
+  width: 63px;
 }
 
 .thumb-selected {
@@ -223,20 +225,20 @@ body {
 
 /* React Event Transistions */
 
-.example-enter {
+.crossfade-enter {
   opacity: 0.01;
 }
 
-.example-enter.example-enter-active {
+.crossfade-enter.crossfade-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
   transition: opacity 300ms ease-in;
+}
+
+.crossfade-leave {
+  opacity: 1;
+}
+
+.crossfade-leave.crossfade-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
 }

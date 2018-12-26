@@ -85,9 +85,9 @@ class App extends React.Component {
           <ul className="main-image-list">
             <ReactCSSTransitionGroup
               component={React.Fragment}
-              transitionName="example"
-              transitionEnterTimeout={500}
-              transitionLeaveTimeout={300}
+              transitionName="crossfade"
+              transitionEnterTimeout={300}
+              transitionLeaveTimeout={500}
             >
               {this.state.mainImages.reverse().map((e, i) => {
                 return (
