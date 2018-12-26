@@ -78,7 +78,6 @@ body {
 
 .hidden {
   opacity: 0;
-  /* transition: opacity 1s linear 0s; */
 }
 
 .arrow-button-left {
@@ -122,23 +121,26 @@ body {
 /* Thumnails */
 .thumb-image {
   height: 40px;
-  margin: 0 2px;
   cursor: pointer;
   opacity: 0.5;
 }
 
 .thumb-list {
+  position: relative;
   white-space: nowrap;
+  transition: left 500ms cubic-bezier(0, 0, 0.15, 1);
 }
 
 .thumb-item {
   display: inline-block;
   text-align: center;
   width: 63px;
+  margin: 0 4px;
 }
 
 .thumb-selected {
   opacity: 1;
+  transition: opacity 0.35s linear 0s;
 }
 
 .thumb-image:hover {
@@ -205,7 +207,6 @@ body {
 }
 
 /* Floor Map Button */
-
 .map-button {
   cursor: pointer;
   height: 40px;
@@ -224,7 +225,6 @@ body {
 }
 
 /* React Event Transistions */
-
 .crossfade-enter {
   opacity: 0.01;
 }

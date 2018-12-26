@@ -10,7 +10,8 @@ class App extends React.Component {
       selected: 0,
       photoCount: 0,
       photos: [],
-      mainImages: []
+      mainImages: [],
+      thumbnailXShift: 0
     };
     // Bind event handlers here:
     this.selectNext = this.selectNext.bind(this);
@@ -72,9 +73,20 @@ class App extends React.Component {
     let newKey = prevKey + 1;
     newMainImages.unshift({ key: newKey, url: this.state.photos[photoIndex] });
 
+    // thumbnailXShift is calculated so that the currently selected and next
+    // thumbnails are always visible
+    let thumbnailXShift = this.state.thumbnailXShift;
+    if (3 < photoIndex && photoIndex < this.state.photoCount - 2) {
+      // Each thumbnail image is 63 pixels wide including margin space
+      thumbnailXShift = -1 * (photoIndex - 3) * 63;
+    } else if (photoIndex < 3){
+      thumbnailXShift = 0;
+    }
+
     this.setState({
       selected: photoIndex,
-      mainImages: newMainImages
+      mainImages: newMainImages,
+      thumbnailXShift: thumbnailXShift
     });
   }
 
@@ -104,7 +116,7 @@ class App extends React.Component {
         <div className="arrow-button-right" onClick={this.selectNext} />
 
         <div className="carousel-container">
-          <ul className="thumb-list">
+          <ul className="thumb-list" style={{left: this.state.thumbnailXShift}}>
             {!this.state.photos
               ? null
               : this.state.photos.slice(0, -2).map((e, i) => {
