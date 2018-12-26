@@ -82,7 +82,7 @@ class App extends React.Component {
     return (
       <div id="carousel">
         <div className="main-image-area">
-          <ul>
+          <ul className="main-image-list">
             <ReactCSSTransitionGroup
               component={React.Fragment}
               transitionName="example"
@@ -91,7 +91,7 @@ class App extends React.Component {
             >
               {this.state.mainImages.reverse().map((e, i) => {
                 return (
-                  <li key={e.key} className="main-image-container">
+                  <li key={e.key} className="main-image-list-item">
                     <img src={e.url} className="main-image" />
                   </li>
                 );
