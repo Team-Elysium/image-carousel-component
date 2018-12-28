@@ -38,7 +38,7 @@ app.use('/', express.static(path.join(__dirname, '../public')));
 
 
 // API Routes
-app.get('/api/:id', (req, res) => {
+app.get('/api/carousel/:id', (req, res) => {
   const id = req.params.id;
 
   db.getById(id)

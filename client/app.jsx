@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import axios from 'axios';
 
-class App extends React.Component {
+class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +22,7 @@ class App extends React.Component {
   componentDidMount() {
     let listingNumber = window.location.pathname.slice('/').split('/')[1];
     // Make call to API with listingNumber
-    fetch(`../api/${listingNumber}`)
+    fetch(`../api/carousel/${listingNumber}`)
       .then(data => {
         return data.json();
       })
@@ -92,7 +92,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="carousel">
+      <div id="carousel-body">
         <div className="main-image-area">
           <ul className="main-image-list">
             <ReactCSSTransitionGroup
@@ -169,4 +169,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Carousel />, document.getElementById('carousel'));
