@@ -31,19 +31,16 @@
     U+FEFF, U+FFFD;
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-}
-
 /* Carousel Area */
 
 #carousel-body {
-  margin: 3em;
   width: 574px;
   height: 446px;
   display: block;
   overflow: hidden;
   border: lightgray dotted 1px;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
 }
 
 .main-image-area {
@@ -51,11 +48,6 @@ body {
   height: 400px;
   margin-bottom: 3px;
   cursor: pointer;
-  position: relative;
-}
-
-.main-image-list {
-  position: relative;
 }
 
 .main-image-list-item {
@@ -82,8 +74,8 @@ body {
 
 .arrow-button-left {
   position: absolute;
-  left: 55px;
-  top: 220px;
+  left: 9px;
+  top: 174px;
   background: no-repeat url(assets/images/arrow-button-left.svg);
   background-position: -4px -2px;
   height: 52px;
@@ -96,8 +88,8 @@ body {
 
 .arrow-button-right {
   position: absolute;
-  left: 560px;
-  top: 220px;
+  left: 512px;
+  top: 174px;
   background: no-repeat url(assets/images/arrow-button-right.svg);
   background-position: -4px -2px;
   height: 52px;
@@ -126,7 +118,7 @@ body {
 }
 
 .thumb-list {
-  position: relative;
+  position: absolute;
   white-space: nowrap;
   transition: left 500ms cubic-bezier(0, 0, 0.15, 1);
 }
@@ -149,10 +141,14 @@ body {
 }
 
 /* Carousel Counter */
+.carousel-thumb-container {
+  position: relative;
+}
+
 .carousel-counter {
   display: inline-block;
-  position: relative;
-  top: -71px;
+  position: absolute;
+  top: -28px;
   left: 0px;
   padding: 6px;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -164,10 +160,9 @@ body {
 /* Buttons */
 .button-container {
   background: white;
-  display: block;
-  top: -44px;
-  position: relative;
-  float: right;
+  position: absolute;
+  right: 0px;
+  top: 0px;
   padding: 0px 4px;
 }
 
