@@ -112,8 +112,12 @@ class Carousel extends React.Component {
           </ul>
         </div>
 
-        <div className="arrow-button-left" onClick={this.selectPrev} />
-        <div className="arrow-button-right" onClick={this.selectNext} />
+        <div className="arrow-button main-arrow-left" onClick={this.selectPrev}>
+          <div className="arrow-button-pointer-left"></div>
+        </div>
+        <div className="arrow-button main-arrow-right" onClick={this.selectNext} >
+          <div className="arrow-button-pointer-right"></div>
+        </div>
 
         <div className="carousel-thumb-container">
           <ul className="thumb-list" style={{left: this.state.thumbnailXShift}}>
