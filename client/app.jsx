@@ -16,7 +16,8 @@ class Carousel extends React.Component {
     // Bind event handlers here:
     this.selectNext = this.selectNext.bind(this);
     this.selectPrev = this.selectPrev.bind(this);
-    this.select = this.select.bind(this);
+    this.selectByClick = this.selectByClick.bind(this);
+    this.shiftThumbnails = this.shiftThumbnails.bind(this);
   }
 
   componentDidMount() {
@@ -46,7 +47,7 @@ class Carousel extends React.Component {
     };
   }
 
-  select(event) {
+  selectByClick(event) {
     let selection = parseInt(event.target.dataset.thumbId);
     this.updateMain(selection);
   }
@@ -73,19 +74,28 @@ class Carousel extends React.Component {
     let newKey = prevKey + 1;
     newMainImages.unshift({ key: newKey, url: this.state.photos[photoIndex] });
 
+    this.shiftThumbnails(photoIndex);
+
+    this.setState({
+      selected: photoIndex,
+      mainImages: newMainImages,
+    });
+  }
+
+  shiftThumbnails(photoIndex) {
+    // Thumbnail width in pixels
+    const THUMBNAIL_WIDTH = 63;
+
     // thumbnailXShift is calculated so that the currently selected and next
     // thumbnails are always visible
     let thumbnailXShift = this.state.thumbnailXShift;
     if (3 < photoIndex && photoIndex < this.state.photoCount - 2) {
-      // Each thumbnail image is 63 pixels wide including margin space
-      thumbnailXShift = -1 * (photoIndex - 3) * 63;
+      thumbnailXShift = -1 * (photoIndex - 3) * THUMBNAIL_WIDTH;
     } else if (photoIndex < 3){
       thumbnailXShift = 0;
     }
 
     this.setState({
-      selected: photoIndex,
-      mainImages: newMainImages,
       thumbnailXShift: thumbnailXShift
     });
   }
@@ -133,7 +143,7 @@ class Carousel extends React.Component {
                             : 'thumb-image'
                         }
                         src={e}
-                        onClick={this.select}
+                        onClick={this.selectByClick}
                         data-thumb-id={i}
                       />
                     </li>
@@ -153,7 +163,7 @@ class Carousel extends React.Component {
               <span
                 className="button-text"
                 data-thumb-id={this.state.photoCount - 2}
-                onClick={this.select}
+                onClick={this.selectByClick}
               >
                 Floor Plan
               </span>
@@ -163,7 +173,7 @@ class Carousel extends React.Component {
               <img
                 src={this.state.map ? this.state.map : null}
                 data-thumb-id={this.state.photoCount - 1}
-                onClick={this.select}
+                onClick={this.selectByClick}
               />
             </div>
           </div>
