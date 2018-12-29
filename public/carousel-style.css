@@ -1,4 +1,8 @@
-/* Entire Document */
+/* ------------------------------------------------------------------------- */
+/*                                                                           */
+/*                       Image Carousel Stylesheet                           */
+/*                                                                           */
+/* ------------------------------------------------------------------------- */
 
 *:before,
 *:after {
@@ -31,7 +35,15 @@
     U+FEFF, U+FFFD;
 }
 
-/* Carousel Area */
+/* ------------------------------------------------------------------------- */
+/*                                                                           */
+/*                              Main Carousel                                */
+/*                                                                           */
+/* ------------------------------------------------------------------------- */
+
+/* --------------------------------------- */
+/*           Main Carousel Area            */
+/* --------------------------------------- */
 
 #carousel-body {
   width: 574px;
@@ -55,7 +67,7 @@
   height: 400px;
   background: white;
   display: block;
-  text-align:center;
+  text-align: center;
 }
 
 .main-image {
@@ -70,6 +82,31 @@
 .hidden {
   opacity: 0;
 }
+
+/* ------- React Event Transitions ------- */
+/*    These apply to main carousel images  */
+
+.crossfade-enter {
+  opacity: 0.01;
+}
+
+.crossfade-enter.crossfade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.crossfade-leave {
+  opacity: 1;
+}
+
+.crossfade-leave.crossfade-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+
+/* --------------------------------------- */
+/*           Main Arrow Buttons            */
+/* --------------------------------------- */
 
 .arrow-button {
   height: 54px;
@@ -120,11 +157,14 @@
 
 .main-arrow-left:hover,
 .main-arrow-right:hover {
-  opacity: .8;
+  opacity: 0.8;
   transition: opacity 0s linear 0s;
 }
 
-/* Thumnails */
+/* --------------------------------------- */
+/*            Main Thumbnails              */
+/* --------------------------------------- */
+
 .thumb-image {
   height: 40px;
   cursor: pointer;
@@ -154,7 +194,10 @@
   transition: opacity 0.35s linear 0s;
 }
 
-/* Carousel Counter */
+/* --------------------------------------- */
+/*          Main Carousel Counter          */
+/* --------------------------------------- */
+
 .carousel-thumb-container {
   position: relative;
 }
@@ -171,7 +214,10 @@
   background: #00000091;
 }
 
-/* Buttons */
+/* --------------------------------------- */
+/*         Main Carousel Buttons           */
+/* --------------------------------------- */
+
 .button-container {
   background: white;
   position: absolute;
@@ -180,7 +226,7 @@
   padding: 0px 4px;
 }
 
-/* Floor Plan Button */
+/* ------- Floor Plan Button ------- */
 .floor-plan-button {
   color: #0080c6;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -215,7 +261,7 @@
   background-position: 18px 13px;
 }
 
-/* Floor Map Button */
+/* ------- Map Button ------- */
 .map-button {
   cursor: pointer;
   height: 40px;
@@ -231,23 +277,4 @@
   margin-left: -153%;
   margin-top: -102%;
   width: 405%;
-}
-
-/* React Event Transistions */
-.crossfade-enter {
-  opacity: 0.01;
-}
-
-.crossfade-enter.crossfade-enter-active {
-  opacity: 1;
-  transition: opacity 300ms ease-in;
-}
-
-.crossfade-leave {
-  opacity: 1;
-}
-
-.crossfade-leave.crossfade-leave-active {
-  opacity: 0.01;
-  transition: opacity 500ms ease-in;
 }
