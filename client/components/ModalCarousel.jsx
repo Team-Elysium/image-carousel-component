@@ -65,8 +65,6 @@ class ModalCarousel extends React.Component {
     let newKey = prevKey + 1;
     newMainImages.unshift({ key: newKey, url: this.props.photos[photoIndex] });
 
-    this.shiftThumbnails(photoIndex);
-
     this.setState({
       selected: photoIndex,
       mainImages: newMainImages
@@ -76,6 +74,7 @@ class ModalCarousel extends React.Component {
   render() {
     return (
       <div id="modal-carousel-body">
+        <div className="modal-overlay" onClick={this.props.modalToggleOff} />
         <div className="modal-main-image-area">
           <ul className="modal-main-image-list">
             <ReactCSSTransitionGroup
@@ -109,10 +108,7 @@ class ModalCarousel extends React.Component {
         </div>
 
         <div className="modal-carousel-thumb-container">
-          <ul
-            className="modal-thumb-list"
-            style={{ left: this.state.thumbnailXShift }}
-          >
+          <ul className="modal-thumb-list">
             {!this.props.photos
               ? null
               : this.props.photos.slice(0, -2).map((e, i) => {

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import axios from 'axios';
 import MainCarousel from './components/MainCarousel.jsx';
-// import MainCarousel from './components/ModalCarousel.jsx'
+import ModalCarousel from './components/ModalCarousel.jsx'
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -47,8 +47,8 @@ class Carousel extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <MainCarousel photos={this.state.photos} map={this.state.map} />
-        {/* <ModalCarousel photos={this.state.photos} /> */}
+        <MainCarousel photos={this.state.photos} map={this.state.map} modalToggleOn={this.modalToggleOn} />
+        {this.state.showModal ? <ModalCarousel photos={this.state.photos} map={this.state.map} modalToggleOff={this.modalToggleOff}/> : null}
       </React.Fragment>
     );
   }
