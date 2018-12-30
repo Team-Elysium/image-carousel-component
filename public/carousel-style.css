@@ -239,7 +239,6 @@
   vertical-align: middle;
   border: 1px solid #e6e6e6;
   display: inline-block;
-  background-image: no-repeat url(/assets/images/floorplan-icon.svg);
 }
 
 .floor-plan-button img {
@@ -346,7 +345,7 @@
 
 
 /* --------------------------------------- */
-/*           Modal Arrow Buttons            */
+/*           Modal Arrow Buttons           */
 /* --------------------------------------- */
 
 .modal-arrow-button {
@@ -395,4 +394,64 @@
 /* To be applied to the document body while modal is active */
 .no-scroll {
   overflow: hidden;
+}
+
+/* ------------------------------------------------------------------------- */
+/*                                                                           */
+/*                            Mobile Styling                                 */
+/*                                                                           */
+/* ------------------------------------------------------------------------- */
+
+@media screen and (max-width: 979px) {
+  #carousel-body {
+    height: 541px;
+    width: 100%;
+  }
+
+  .main-image-area {
+    margin: 0 auto;
+  }
+
+  .arrow-button,
+  .thumb-list,
+  .carousel-counter {
+    display: none;
+  }
+
+  .thumb-list {
+    position: static;
+  }
+
+  .carousel-thumb-container {
+    text-align: center;
+    display: inline-block;
+  }
+
+  .button-container {
+    width: 95%;
+    position: relative;
+    padding: 10px;
+  }
+
+  .floor-plan-button {
+    width: 40%;
+    height: 90px;
+    margin: 10px;
+    background: url(/assets/images/floorplan-button-background.jpg);
+  }
+
+  .button-text {
+    padding: 34px 16px 10px 34px;
+    background-position: 18px 37px;
+  }
+
+  .map-button {
+    width: 40%;
+    height: 90px;
+    margin: 10px;
+  }
+
+  .map-button img {
+    margin-top: -109%;
+  }
 }
