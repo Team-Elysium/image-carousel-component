@@ -285,8 +285,11 @@
 /*                                                                           */
 /* ------------------------------------------------------------------------- */
 
-.modal-overlay {
+#modal-carousel-body {
   z-index: 100;
+}
+
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -296,7 +299,6 @@
 }
 
 .modal-main-image-area {
-  z-index: 120;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -306,10 +308,10 @@
 .modal-carousel-thumb-container {
   height: 78px;
   background: black;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  z-index: 110;
   text-align: center;
 }
 
@@ -320,5 +322,77 @@
   width: 44px;
   display: inline-block;
   margin: 17px 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.modal-main-image {
+  height: 800px;
+  position: absolute;
+  transform: translate(-50%, -55%);
+  top: 50%;
+  left: 50%;
+}
+
+.modal-thumb-image,
+.modal-map-button img {
+  max-height: 44px;
+  transform: translate(-13%, 0%);
+}
+
+.modal-floor-plan-button {
+  background: url(/assets/images/floorplan-icon-modal.png) -4px 1px/52px no-repeat;
+}
+
+
+/* --------------------------------------- */
+/*           Modal Arrow Buttons            */
+/* --------------------------------------- */
+
+.modal-arrow-button {
+  height: 54px;
+  width: 54px;
+  border-radius: 54px;
+  border: 1px solid grey;
+  box-shadow: 0px 1px 4px 1px #00000017;
+  cursor: pointer;
+}
+
+.modal-arrow-button-pointer-left {
+  border-top: white 2px solid;
+  border-left: white 2px solid;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  transform: rotateZ(-45deg);
+}
+
+.modal-arrow-button-pointer-right {
+  border-top: white 2px solid;
+  border-left: white 2px solid;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  transform: rotateZ(135deg);
+}
+
+.modal-arrow-left {
+  position: fixed;
+  top: 46%;
+  left: 1%;
+}
+
+.modal-arrow-right {
+  position: fixed;
+  top: 46%;
+  right: 1%;
+}
+
+/* To be applied to the document body while modal is active */
+.no-scroll {
   overflow: hidden;
 }
