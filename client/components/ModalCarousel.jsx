@@ -60,7 +60,7 @@ class ModalCarousel extends React.Component {
   }
 
   updateMain(photoIndex) {
-    let newMainImages = this.state.mainImages.slice(-1);
+    let newMainImages = [];
     let prevKey = this.state.mainImages.slice(-1)[0].key;
     let newKey = prevKey + 1;
     newMainImages.unshift({ key: newKey, url: this.props.photos[photoIndex] });
@@ -132,7 +132,6 @@ class ModalCarousel extends React.Component {
               data-thumb-id={this.props.photos.length - 2}
               onClick={this.selectByClick}
             >
-              <img src="/assets/images/floorplan-icon-modal.png" />
             </li>
             <li className="modal-map-button">
               <img
