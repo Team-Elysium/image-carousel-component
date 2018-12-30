@@ -36,12 +36,14 @@ class Carousel extends React.Component {
     this.setState({
       showModal: true
     });
+    document.body.classList.add('no-scroll');
   }
 
   modalToggleOff() {
     this.setState({
       showModal: false
     });
+    document.body.classList.remove('no-scroll');
   }
 
   render() {
