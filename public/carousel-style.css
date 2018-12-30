@@ -278,3 +278,47 @@
   margin-top: -102%;
   width: 405%;
 }
+
+/* ------------------------------------------------------------------------- */
+/*                                                                           */
+/*                             Modal Styling                                 */
+/*                                                                           */
+/* ------------------------------------------------------------------------- */
+
+.modal-overlay {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000d4;
+}
+
+.modal-main-image-area {
+  z-index: 120;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-carousel-thumb-container {
+  height: 78px;
+  background: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 110;
+  text-align: center;
+}
+
+.modal-thumb-item,
+.modal-floor-plan-button,
+.modal-map-button {
+  height: 44px;
+  width: 44px;
+  display: inline-block;
+  margin: 17px 8px;
+  overflow: hidden;
+}
