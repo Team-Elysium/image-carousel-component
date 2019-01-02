@@ -29,7 +29,7 @@ class ModalCarousel extends React.Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (prevState.mainImages.length === 0) {
       return {
-        mainImages: [{ key: 0, url: nextProps.photos[nextProps.startImage] }]
+        mainImages: [{ key: 0, url: nextProps.photos[nextProps.startImageIndex] }]
       };
     }
 

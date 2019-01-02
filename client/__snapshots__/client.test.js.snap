@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainCarousel renders correctly 1`] = `
+<div
+  id="carousel-body"
+>
+  <div
+    className="main-image-area"
+  >
+    <ul
+      className="main-image-list"
+      onClick={[Function]}
+    >
+      <li
+        className="main-image-list-item"
+      >
+        <img
+          className="main-image"
+          src="https://www.elliman.com/img/19c74783b315fe1a01465c90eea1876d830b02b7+440++1"
+        />
+      </li>
+    </ul>
+  </div>
+  <div
+    className="arrow-button main-arrow-left"
+    onClick={[Function]}
+  >
+    <div
+      className="arrow-button-pointer-left"
+    />
+  </div>
+  <div
+    className="arrow-button main-arrow-right"
+    onClick={[Function]}
+  >
+    <div
+      className="arrow-button-pointer-right"
+    />
+  </div>
+  <div
+    className="carousel-thumb-container"
+  >
+    <ul
+      className="thumb-list"
+      style={
+        Object {
+          "left": 0,
+        }
+      }
+    >
+      <li
+        className="thumb-item"
+      >
+        <img
+          className="thumb-image thumb-selected"
+          data-thumb-id={0}
+          onClick={[Function]}
+          src="https://www.elliman.com/img/19c74783b315fe1a01465c90eea1876d830b02b7+440++1"
+        />
+      </li>
+      <li
+        className="thumb-item"
+      >
+        <img
+          className="thumb-image"
+          data-thumb-id={1}
+          onClick={[Function]}
+          src="https://www.elliman.com/img/d9f471eee75f0efff643132176e6ad91c1543759+440++1"
+        />
+      </li>
+      <li
+        className="thumb-item"
+      >
+        <img
+          className="thumb-image"
+          data-thumb-id={2}
+          onClick={[Function]}
+          src="https://www.elliman.com/img/6f61458bc9024c65822fb25371406b6aedcc65ec+440++1"
+        />
+      </li>
+      <li
+        className="thumb-item"
+      >
+        <img
+          className="thumb-image"
+          data-thumb-id={3}
+          onClick={[Function]}
+          src="https://www.elliman.com/img/027fd7d7bcc449efe7db06303b41cb70868c24a4+440++1"
+        />
+      </li>
+    </ul>
+    <div
+      className="carousel-counter"
+    >
+      <p>
+        1
+         of
+         
+        6
+      </p>
+    </div>
+    <div
+      className="button-container"
+    >
+      <div
+        className="floor-plan-button"
+      >
+        <span
+          className="button-text"
+          data-thumb-id={4}
+          onClick={[Function]}
+        >
+          Floor Plan
+        </span>
+      </div>
+      <div
+        className="map-button"
+      >
+        <img
+          data-thumb-id={5}
+          onClick={[Function]}
+          src="https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/url-https%3A%2F%2Fcdn-assets-s3.streeteasy.com%2Fassets%2Fmap%2Fstatic-map-marker%402x-9a7b6523f406fc1bca992bf7132b76f581228967ba388d2fea8aa517a7af579e.png%28-73.75849915%2C40.73730087%29%2Cpath-3%2B0066CC-0.6%2B000000-0.05%28ifvwFr%7DbaM%7CAvHhItm%40dMje%40xGra%40vHdTrB%60T%60E%7DA~PsFrOyDrFeBpGkDdWkOxWqQ%5C_P%7CAyRo%40mMkAiJuBoHyC%7DIiCiFmCyDkDeGmC_C%7BHwKmHqFiFuIgMyPsBuWuHa%40%60Hl%5DqPhArHfu%40cNjNgHax%40uSvHaCsLoPtFeJjDoAhF%29/-73.75849915,40.73730087,11/574x400@2x?access_token=pk.eyJ1Ijoic3RyZWV0ZWFzeSIsImEiOiJjajN5b2s0a24wMDJrMndueTVnZWQ4bG5tIn0.sTJOTNh0HQpknYMVjYKPDQ"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ModalCarousel renders correctly 1`] = `
+<div
+  id="modal-carousel-body"
+>
+  <div
+    className="modal-overlay"
+    onClick={[Function]}
+  />
+  <div
+    className="modal-main-image-area"
+  >
+    <ul
+      className="modal-main-image-list"
+    >
+      <li
+        className="modal-main-image-list-item"
+      >
+        <img
+          className="modal-main-image"
+        />
+      </li>
+    </ul>
+  </div>
+  <div
+    className="modal-arrow-button modal-arrow-left"
+    onClick={[Function]}
+  >
+    <div
+      className="modal-arrow-button-pointer-left"
+    />
+  </div>
+  <div
+    className="modal-arrow-button modal-arrow-right"
+    onClick={[Function]}
+  >
+    <div
+      className="arrow-button-pointer-right"
+    />
+  </div>
+  <div
+    className="modal-carousel-thumb-container"
+  >
+    <ul
+      className="modal-thumb-list"
+    >
+      <li
+        className="modal-thumb-item"
+      >
+        <img
+          className="modal-thumb-image modal-thumb-selected"
+          data-thumb-id={0}
+          onClick={[Function]}
+          src="https://www.elliman.com/img/19c74783b315fe1a01465c90eea1876d830b02b7+440++1"
+        />
+      </li>
+      <li
+        className="modal-thumb-item"
+      >
+        <img
+          className="modal-thumb-image"
+          data-thumb-id={1}
+          onClick={[Function]}
+          src="https://www.elliman.com/img/d9f471eee75f0efff643132176e6ad91c1543759+440++1"
+        />
+      </li>
+      <li
+        className="modal-thumb-item"
+      >
+        <img
+          className="modal-thumb-image"
+          data-thumb-id={2}
+          onClick={[Function]}
+          src="https://www.elliman.com/img/6f61458bc9024c65822fb25371406b6aedcc65ec+440++1"
+        />
+      </li>
+      <li
+        className="modal-thumb-item"
+      >
+        <img
+          className="modal-thumb-image"
+          data-thumb-id={3}
+          onClick={[Function]}
+          src="https://www.elliman.com/img/027fd7d7bcc449efe7db06303b41cb70868c24a4+440++1"
+        />
+      </li>
+      <li
+        className="modal-floor-plan-button"
+        data-thumb-id={4}
+        onClick={[Function]}
+      />
+      <li
+        className="modal-map-button"
+      >
+        <img
+          data-thumb-id={5}
+          onClick={[Function]}
+          src="https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/url-https%3A%2F%2Fcdn-assets-s3.streeteasy.com%2Fassets%2Fmap%2Fstatic-map-marker%402x-9a7b6523f406fc1bca992bf7132b76f581228967ba388d2fea8aa517a7af579e.png%28-73.75849915%2C40.73730087%29%2Cpath-3%2B0066CC-0.6%2B000000-0.05%28ifvwFr%7DbaM%7CAvHhItm%40dMje%40xGra%40vHdTrB%60T%60E%7DA~PsFrOyDrFeBpGkDdWkOxWqQ%5C_P%7CAyRo%40mMkAiJuBoHyC%7DIiCiFmCyDkDeGmC_C%7BHwKmHqFiFuIgMyPsBuWuHa%40%60Hl%5DqPhArHfu%40cNjNgHax%40uSvHaCsLoPtFeJjDoAhF%29/-73.75849915,40.73730087,11/574x400@2x?access_token=pk.eyJ1Ijoic3RyZWV0ZWFzeSIsImEiOiJjajN5b2s0a24wMDJrMndueTVnZWQ4bG5tIn0.sTJOTNh0HQpknYMVjYKPDQ"
+        />
+      </li>
+    </ul>
+  </div>
+</div>
+`;
