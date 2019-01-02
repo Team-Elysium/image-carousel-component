@@ -70,3 +70,10 @@ app.listen(PORT, (err, data) => {
   if (err) return console.log('Error starting server:', err);
   console.log(`Successfully started server on http://localhost:${PORT}`);
 });
+
+
+////////////////////
+//  Export server for testing
+
+module.exports = app;
+
