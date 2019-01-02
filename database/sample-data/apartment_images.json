@@ -1,0 +1,198 @@
+{
+  "tier0": {
+    "exterior": [
+      "https://www.elliman.com/img/19c74783b315fe1a01465c90eea1876d830b02b7+440++1",
+      "https://www.elliman.com/img/0f512a2eed5d355bd6fc7289a880b9e3a2b54dda+440++1",
+      "https://www.elliman.com/img/c1c16b777a8bab4afe3b4edf0e0adc89329e38ff+440++1",
+      "https://www.elliman.com/img/1970bf954fdc4b5529e4f907b06d326baa474cf7+440++1"
+    ],
+    "kitchen": [
+      "https://www.elliman.com/img/31853869a085c790bcb1b2fe644c9f820acea2f8+440++1",
+      "https://www.elliman.com/img/9db2d9b4cbb7a6e8766b052ea94cd09baf9cad98+440++1",
+      "https://www.elliman.com/img/d9f471eee75f0efff643132176e6ad91c1543759+440++1",
+      "http://photos.v3.mlsstratus.com/Live/photos/FULL/8/944/3035944_8.jpg"
+    ],
+    "bedroom": [
+      "https://www.elliman.com/img/1646e1f4de1b58b83f5806f856f2c7fe208ab0d0+440++1",
+      "https://www.elliman.com/img/6f61458bc9024c65822fb25371406b6aedcc65ec+440++1",
+      "https://www.elliman.com/img/c1b66740f507b23750f602b4147446536cce6c07+440++1",
+      "https://www.elliman.com/img/027fd7d7bcc449efe7db06303b41cb70868c24a4+440++1",
+      "http://photos.v3.mlsstratus.com/Live/photos/FULL/7/944/3035944_7.jpg"
+    ],
+    "bathroom": [
+      "https://www.elliman.com/img/8da04c4dc07a08669d14156adec829ac99109caa+440++1",
+      "https://www.elliman.com/img/8e258e8a9d7dcc8fd75ff90b53d4d12b30b58e01+440++1",
+      "https://www.elliman.com/img/186da8aace77874d3cbd7321549c5d91dedc22a8+440++1",
+      "https://www.elliman.com/img/26683ef251d84f462bb8b36f5197b3ab617d5cdf+440++1"
+    ],
+    "livingroom": [
+      "https://www.elliman.com/img/b8ce400bbbade920b96bc694d8236b06de77991c+440++1",
+      "https://www.elliman.com/img/060295694abae247e3319b97bdaf683d95bd9ac0+440++1",
+      "https://www.elliman.com/img/801c6b242be096bd606bb80fcf82bebb276661a1+440++1",
+      "https://www.elliman.com/img/a28fb7fd129fff8cd9f3cbd30543637afb22627b+440++1",
+      "https://www.elliman.com/img/57b16eb1124ed25bd1d84b572da965cdb8848e13+440++1"
+    ]
+  },
+  "tier1": {
+    "exterior": [
+      "https://www.elliman.com/img/20a1951350a89952eddaf75955404e8a21520567+440++1",
+      "https://www.elliman.com/img/fad173f62f70d56c2933f7c42167a327d091440a+440++1",
+      "https://www.elliman.com/img/2cf029170250632b1ec03b5f345f550fd3570a88+440++1",
+      "https://www.elliman.com/img/9becc1dbd459050d38e8a3dac2ae8f0884191e7f+440++1",
+      "https://www.elliman.com/img/508d499e6dc9c21765eba02bdb383122a356ba64+440++1",
+      "https://www.elliman.com/img/685ea873dc0399ae84cbd5a355559c0abb769464+440++1"
+    ],
+    "kitchen": [
+      "https://www.elliman.com/img/11db975f149aa0221fcb229bfd9f7c107ac1cf8f+440++1",
+      "https://www.elliman.com/img/117cd884ab5617b387220c5474f5704a312f2f56+440++1",
+      "https://www.elliman.com/img/174678872fd6a9bc28cd3244d8c99e5071261d4a+440++1",
+      "https://www.elliman.com/img/06345ddd3e86590095cbf5c84db2bdc8a58fca69+440++1"
+    ],
+    "bedroom": [
+      "https://www.elliman.com/img/49a0a1b94c5ec40c2491bd4e79aca68147b3d7b2+440++1",
+      "https://www.elliman.com/img/a0d8e35b30f8ef3487252252964e91c6c255b7ba+440++1",
+      "https://www.elliman.com/img/2245f191b322b685006850cab47c17bcce60dbfe+440++1",
+      "https://www.elliman.com/img/d7ec69e40e5cc86b5749507ba75ef7fe2c520b35+w+h+0",
+      "https://www.elliman.com/img/6ef584c93a83e4b510d1111c9273fe297fbbf379+w+h+0"
+    ],
+    "bathroom": [
+      "https://www.elliman.com/img/a48437c66e3222d6d9a8e926c596e24de23374e0+440++1",
+      "https://www.elliman.com/img/bfca9b5bb34f76541f8c3981b1a02af8d2d414b7+440++1",
+      "https://www.elliman.com/img/f19c76a273975e60255c1e4a3787e101f8d623ce+440++1",
+      "https://www.elliman.com/img/671c671fefc212e2b8fc3d937fae5debe06bc025+440++1",
+      "https://www.elliman.com/img/c25487a85c72acfba7a04afe84890a6ea6a1f3fc+w+h+0"
+    ],
+    "livingroom": [
+      "https://www.elliman.com/img/ff41bddbd46801575e76f966b9f012578d3b588c+440++1",
+      "https://www.elliman.com/img/7c57c9331f7e59f4d6c186b879f8cb434be50ea2+440++1",
+      "https://www.elliman.com/img/d5fb0d438f41ee9ef70a5f6913dad3c98a3377fb+440++1",
+      "https://www.elliman.com/img/944bb4ba2f830a02dbf8804582157e69e2f8ed50+440++1",
+      "https://www.elliman.com/img/28adb1d529f3ac8d5576decd90173ded897dbb9b+440++1"
+    ],
+    "amenities": [
+      "https://www.elliman.com/img/44792212c558e6c71883a543a745bca3e0ed9428+440++1",
+      "https://www.elliman.com/img/3f453c960b30d0df0d3cb81cd086961af89c14df+440++1",
+      "https://www.elliman.com/img/9eb12bde40328e86939403d87dabc5fa12268c72+440++1",
+      "https://www.elliman.com/img/c48a84f340714408e6b3aa1c85b68545ef844073+440++1",
+      "https://www.elliman.com/img/e3dc7cae1062b47430cd3721ee09b0529c11ed4a+440++1"
+    ]
+  },
+  "tier2": {
+    "exterior": [
+      "https://www.elliman.com/img/ca4b0acffcf2a433bb01abfe8b90baeecfb7e638+440++1",
+      "https://www.elliman.com/img/ef38d5c9dc4b0d2dc2581d4cf3431278e3c2400e+440++1",
+      "https://www.elliman.com/img/13a53d99f5b24e3451f0cc7b89b1eee1366e430a+440++1",
+      "https://www.elliman.com/img/30f3e97012364bc295e05924d50c48494075e9f8+440++1",
+      "https://www.elliman.com/img/617b1313d195dd6b3a5486e9fcb75a7d5251e450+440++1"
+    ],
+    "kitchen": [
+      "https://www.elliman.com/img/d028ce5827d039e1342e5b9ae0067d5a601e634d+w+h+0",
+      "https://www.elliman.com/img/dcdd67b7deea5d3faeb49eea10fda572eb6caa49+440++1",
+      "https://www.elliman.com/img/c016569d4fb20cf45e5b37d593e6dda6e224117e+440++1",
+      "https://www.elliman.com/img/76227b8f712596380e0a692d38baa033edb99ad3+440++1"
+    ],
+    "bedroom": [
+      "https://www.elliman.com/img/11a7b7c0467bd2e911fd4ad788e437108e1b86fa+440++1",
+      "https://www.elliman.com/img/5fa27d8c8bb6a260f715cc771463a623e107a59e+440++1",
+      "https://www.elliman.com/img/534e7793b3313436c716769cae47d8985ddce013+440++1",
+      "https://www.elliman.com/img/cf4c69d8a9b88b868396330c800ec9d7494feddc+440++1"
+    ],
+    "bathroom": [
+      "https://www.elliman.com/img/1a47a89feb12a96492483805338ef0866ec8fc56+440++1",
+      "https://www.elliman.com/img/a5b1ad5c6d88b59d5df049d8a3a4b2c41f7ae680+440++1",
+      "https://www.elliman.com/img/1391f2535c1e16e3e6f7282d0c821590baa9b22f+440++1",
+      "https://www.elliman.com/img/ec01adabd29239000efa48881da4513470fdfede+440++1",
+      "https://www.elliman.com/img/fe7fb9e116d52fb0f46e365982439cc1d06c9364+440++1"
+    ],
+    "livingroom": [
+      "https://www.elliman.com/img/90d203d8a2a1950d8595e3397733ef82972c7a1b+440++1",
+      "https://www.elliman.com/img/3805f21747ccf5ac432f09f7952f17fd9719c628+440++1",
+      "https://www.elliman.com/img/723610035a0c5c622b5e6f51aa8b61ff50182f86+440++1",
+      "https://www.elliman.com/img/26efb0bb91174c1409523711f0380f65e66511ea+440++1",
+      "https://www.elliman.com/img/37f7221c9cfc41865925525a7208a2333351e859+440++1"
+    ],
+    "amenities": [
+      "https://www.elliman.com/img/7c43dbaeca74d1e3f795baa9575808e54f41d913+440++1",
+      "https://www.elliman.com/img/4a9c265010c115b1703a7e676c846d4697e1284a+440++1",
+      "https://www.elliman.com/img/35ac94aa5d72cae0e42b715e430f410e2554e8f8+440++1",
+      "https://www.elliman.com/img/c48a84f340714408e6b3aa1c85b68545ef844073+440++1",
+      "https://www.elliman.com/img/f9ad91ae5a3ff859047a5edbee7956bbd6158099+440++1",
+      "https://www.elliman.com/img/74f87d5a476a8fae0ac2ba1f707a270b5e9028a5+440++1",
+      "https://www.elliman.com/img/d60cc9296b13998e4eb790d54d775bc1abe27a94+440++1"
+    ]
+  },
+  "tier3": {
+    "exterior": [
+      "https://www.elliman.com/img/3f58849e34fc2aa1afac5f785a26cddb77239f38+440++1",
+      "https://www.elliman.com/img/7fb960938c8420c6db19d60e6c5fb8a9d316e7a1+440++1",
+      "https://www.elliman.com/img/376f3037129071c0616a96acd7cda037a8f304ce+440++1",
+      "https://www.elliman.com/img/910a7c12d9e3f39fcaba815448697884a2203f63+440++1",
+      "https://www.elliman.com/img/f16b3ba30a04a80ad6b918a0def67594b8ad5104+440++1",
+      "https://www.elliman.com/img/6a17f963690e613b094607a34a4ff0fe0ade5ff1+440++1",
+      "https://www.elliman.com/img/512183bca24c05a23afd8ac6ad8d0e344ee1c8a4+440++1",
+      "https://www.elliman.com/img/4701a6b097f8e46c8d13cc9ddb4a3f5df54ab516+440++1",
+      "https://www.elliman.com/img/5048aa13a385a9d06038d37dd54b613d54ea04fd+440++1"
+    ],
+    "kitchen": [
+      "https://www.elliman.com/img/76227b8f712596380e0a692d38baa033edb99ad3+440++1",
+      "https://www.elliman.com/img/444e0024be5e1c21af2ddf0c6997cb43a5984a98+440++1",
+      "https://www.elliman.com/img/941e1bdbcb503ab58660927b9d92f8b0e9262468+440++1",
+      "https://www.elliman.com/img/9f9988fcd1caed1d58bd05d994b67792287502f5+440++1",
+      "https://www.elliman.com/img/ef1d54bf1f7bd6ea949904d2c0d774b291be575c+440++1",
+      "https://www.elliman.com/img/8bc14cc01d50d41fb665884d94aaebfef3f3bdd7+440++1",
+      "https://www.elliman.com/img/9c3c16777305eed46b04e44ca3a424986e114fe2+440++1",
+      "https://www.elliman.com/img/5711cc15b382a3f1f10023fa2527febd1adb14c8+440++1"
+    ],
+    "bedroom": [
+      "https://www.elliman.com/img/b5cb3d3055e1de5b1a847676e55f3b04cc25e871+440++1",
+      "https://www.elliman.com/img/8281205cfc7a7b095770242fa2d610a764520345+440++1",
+      "https://www.elliman.com/img/cd99895220b8ebd235f18981c5d9b7800c76c2d1+440++1",
+      "https://www.elliman.com/img/6dec36bd193bc8fc657b3413e316cf9750160884+440++1",
+      "https://www.elliman.com/img/9e9a2bfa118dff9adb48ca8c6be146d200ea48f4+440++1",
+      "https://www.elliman.com/img/c028bceb1452488163ebb7c4c419a9fae3a76d94+440++1",
+      "https://www.elliman.com/img/4081501e1f67da964ca776dceb55e77c606f8de2+440++1",
+      "https://www.elliman.com/img/e9b8702cadb40934babbb28391618789af0b58da+440++1"
+    ],
+    "bathroom": [
+      "https://www.elliman.com/img/602bd460e5b19ea76a396e26f647b12d342db919+440++1",
+      "https://www.elliman.com/img/337f943659d9db32d8094d9a6cd44cf13ee661d2+440++1",
+      "https://www.elliman.com/img/6f4ac6b5c9700116722ea144a367b9084c14289d+440++1",
+      "https://www.elliman.com/img/ca7283b3a94893afaf6b62d9119e7e4ffb41f985+440++1",
+      "https://www.elliman.com/img/a663708e69f4e9aad5ac94183c39ef9046ac88ce+440++1",
+      "https://www.elliman.com/img/7beab4bea025ec22978337dfb77ad2ea2f4f882b+440++1",
+      "https://www.elliman.com/img/92701baa773756f38cefd5e3cb0e1579fe246bdf+440++1",
+      "https://www.elliman.com/img/069fc8d02245b38ab30e2e7d1ca6a5e045433085+440++1",
+      "https://www.elliman.com/img/7ec45e10ab258068d3ff6bf32b022a60c89fdc03+440++1"
+    ],
+    "livingroom": [
+      "https://www.elliman.com/img/3e6429a5bb732dc22c3ab8dc06a7c62c7756be41+440++1",
+      "https://www.elliman.com/img/fe0c6e215cb161053e812b772546d805f53b5879+440++1",
+      "https://www.elliman.com/img/98fd66aca50fe6146730959633e40764824a1d4f+440++1",
+      "https://www.elliman.com/img/f61c47bb5d341dc67b6283e8de175ac94d5a8113+440++1",
+      "https://www.elliman.com/img/fbe8864d468288c26aac163cbcf399e838655133+440++1",
+      "https://www.elliman.com/img/d192fc2fcc1c69b20eb0b918e12873f8fcd58a41+440++1",
+      "https://www.elliman.com/img/0a250e4c2f8efca87bce38c896fc2a78898d55c6+440++1",
+      "https://www.elliman.com/img/eebaab353b63302613d5b50fd36343b170c4bc5d+440++1",
+      "https://www.elliman.com/img/adfb1f6e54dbdf25660a43a108cdefe6dc3aa75b+440++1"
+    ],
+    "amenities": [
+      "https://www.elliman.com/img/efead005ad19f18ce13ac46d9828a1669051e021+440++1",
+      "https://www.elliman.com/img/210d5d2de05a4c15f61145a21597152380f4599c+440++1",
+      "https://www.elliman.com/img/01e16ed884227e70911b6a0c66fc43fe094a9889+440++1",
+      "https://www.elliman.com/img/b1b281989d431c314aa37d9a506cbf68617d8259+440++1",
+      "https://www.elliman.com/img/fe47b7a0ceeb768cb3d09dd683c12516999bf379+440++1",
+      "https://www.elliman.com/img/a238d97a1bc218188b12be07e2834ba2dcdf76ea+440++1",
+      "https://www.elliman.com/img/ba4d646cfa69213cdd388111893b987aca8a6407+440++1",
+      "https://www.elliman.com/img/e4fcfc548a8502ccbaf1d7d973add55d4c3ac318+440++1",
+      "https://www.elliman.com/img/a8050b5d35f342c729c71ea813493cdac078ca09+440++1",
+      "https://www.elliman.com/img/88ad161a17493af431831e9427a9e41cb757de38+440++1",
+      "https://www.elliman.com/img/75a962898c34ff30379bd6cd610d7a11348488a4+440++1",
+      "https://www.elliman.com/img/705cc32ac6c8b990d918792d4073e89d84787eef+440++1",
+      "https://www.elliman.com/img/f77e9731b7e99da6607859661d95f50d1f5bb87c+440++1",
+      "https://www.elliman.com/img/35ac94aa5d72cae0e42b715e430f410e2554e8f8+440++1",
+      "https://www.elliman.com/img/6cc3ef04bd1a87cf0fd25628799b3b46ecbbfdd5+440++1",
+      "https://www.elliman.com/img/7005bbc4da69287dc7c38aa84ff56baa9cda21b3+440++1",
+      "https://www.elliman.com/img/d706a52cbfbd0faa1d028b00e118e26509c7d214+440++1"
+    ]
+  }
+}
