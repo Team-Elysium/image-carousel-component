@@ -52,10 +52,10 @@ class Carousel extends React.Component {
     return (
       <React.Fragment>
         <MainCarousel photos={this.state.photos} map={this.state.map} modalToggleOn={this.modalToggleOn} />
-        {this.state.showModal ? <ModalCarousel photos={this.state.photos} map={this.state.map} modalToggleOff={this.modalToggleOff} startImage={this.state.modalToggleImage}/> : null}
+        {this.state.showModal ? <ModalCarousel photos={this.state.photos} map={this.state.map} modalToggleOff={this.modalToggleOff} startImageIndex={this.state.modalToggleImage}/> : null}
       </React.Fragment>
     );
   }
 }
 
-ReactDOM.render(<Carousel />, document.getElementById('carousel'));
+ReactDOM.render(<Carousel />, document.getElementById('carousel-container'));
