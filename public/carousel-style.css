@@ -1,0 +1,280 @@
+/* ------------------------------------------------------------------------- */
+/*                                                                           */
+/*                       Image Carousel Stylesheet                           */
+/*                                                                           */
+/* ------------------------------------------------------------------------- */
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+    url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2)
+      format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+    url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu3cOWxw.woff2)
+      format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* ------------------------------------------------------------------------- */
+/*                                                                           */
+/*                              Main Carousel                                */
+/*                                                                           */
+/* ------------------------------------------------------------------------- */
+
+/* --------------------------------------- */
+/*           Main Carousel Area            */
+/* --------------------------------------- */
+
+#carousel-body {
+  width: 574px;
+  height: 446px;
+  display: block;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+.main-image-area {
+  width: 574px;
+  height: 400px;
+  margin-bottom: 3px;
+  cursor: pointer;
+}
+
+.main-image-list-item {
+  position: absolute;
+  width: 574px;
+  height: 400px;
+  background: white;
+  display: block;
+  text-align: center;
+}
+
+.main-image {
+  height: 400px;
+  transition: opacity 0.2s linear 0s;
+}
+
+.selected {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+/* ------- React Event Transitions ------- */
+/*    These apply to main carousel images  */
+
+.crossfade-enter {
+  opacity: 0.01;
+}
+
+.crossfade-enter.crossfade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.crossfade-leave {
+  opacity: 1;
+}
+
+.crossfade-leave.crossfade-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+
+/* --------------------------------------- */
+/*           Main Arrow Buttons            */
+/* --------------------------------------- */
+
+.arrow-button {
+  height: 54px;
+  width: 54px;
+  border-radius: 54px;
+  background: white;
+  box-shadow: 0px 1px 4px 1px #00000017;
+  cursor: pointer;
+}
+
+.arrow-button-pointer-left {
+  border-top: #a0a0a0 2px solid;
+  border-left: #a0a0a0 2px solid;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  transform: rotateZ(-45deg);
+}
+
+.arrow-button-pointer-right {
+  border-top: #a0a0a0 2px solid;
+  border-left: #a0a0a0 2px solid;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  transform: rotateZ(135deg);
+}
+
+.main-arrow-left {
+  position: absolute;
+  left: 10px;
+  top: 174px;
+  opacity: 0.6;
+  transition: opacity 600ms cubic-bezier(0, 0, 0.36, 1.01) 0s;
+}
+
+.main-arrow-right {
+  position: absolute;
+  left: 510px;
+  top: 174px;
+  opacity: 0.6;
+  transition: opacity 600ms cubic-bezier(0, 0, 0.36, 1.01) 0s;
+}
+
+.main-arrow-left:hover,
+.main-arrow-right:hover {
+  opacity: 0.8;
+  transition: opacity 0s linear 0s;
+}
+
+/* --------------------------------------- */
+/*            Main Thumbnails              */
+/* --------------------------------------- */
+
+.thumb-image {
+  height: 40px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.thumb-list {
+  position: absolute;
+  white-space: nowrap;
+  transition: left 500ms cubic-bezier(0, 0, 0.15, 1);
+}
+
+.thumb-item {
+  display: inline-block;
+  text-align: center;
+  width: 63px;
+  margin: 0 4px;
+}
+
+.thumb-selected {
+  opacity: 1;
+  transition: opacity 0.35s linear 0s;
+}
+
+.thumb-image:hover {
+  opacity: 1;
+  transition: opacity 0.35s linear 0s;
+}
+
+/* --------------------------------------- */
+/*          Main Carousel Counter          */
+/* --------------------------------------- */
+
+.carousel-thumb-container {
+  position: relative;
+}
+
+.carousel-counter {
+  display: inline-block;
+  position: absolute;
+  top: -28px;
+  left: 0px;
+  padding: 6px;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  color: white;
+  background: #00000091;
+}
+
+/* --------------------------------------- */
+/*         Main Carousel Buttons           */
+/* --------------------------------------- */
+
+.button-container {
+  background: white;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 0px 4px;
+}
+
+/* ------- Floor Plan Button ------- */
+.floor-plan-button {
+  color: #0080c6;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  height: 40px;
+  vertical-align: middle;
+  border: 1px solid #e6e6e6;
+  display: inline-block;
+  background-image: no-repeat url(/assets/images/floorplan-icon.svg);
+}
+
+.floor-plan-button img {
+  display: inline;
+}
+
+.floor-plan-button p {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0 0px 6px 6px;
+}
+
+.button-text {
+  display: inline-block;
+  line-height: 20px;
+  padding: 10px 16px 10px 34px;
+  display: inline-block;
+  background: no-repeat url(/assets/images/floorplan-icon.svg);
+  background-position: 18px 13px;
+}
+
+/* ------- Map Button ------- */
+.map-button {
+  cursor: pointer;
+  height: 40px;
+  vertical-align: middle;
+  border: 1px solid #e6e6e6;
+  display: inline-block;
+  overflow: hidden;
+  width: 71px;
+  margin: 0 0 0 3px;
+}
+
+.map-button img {
+  margin-left: -153%;
+  margin-top: -102%;
+  width: 405%;
+}
