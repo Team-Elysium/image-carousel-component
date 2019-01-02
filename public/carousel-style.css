@@ -314,6 +314,10 @@
   text-align: center;
 }
 
+.modal-thumb-list {
+  display: inline;
+}
+
 .modal-thumb-item,
 .modal-floor-plan-button,
 .modal-map-button {
