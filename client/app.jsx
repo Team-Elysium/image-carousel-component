@@ -10,7 +10,8 @@ class Carousel extends React.Component {
     super(props);
     this.state = {
       photos: [],
-      showModal: false
+      showModal: false,
+      modalToggleImage: null
     };
 
     this.modalToggleOn = this.modalToggleOn.bind(this);
@@ -32,9 +33,10 @@ class Carousel extends React.Component {
       });
   }
 
-  modalToggleOn() {
+  modalToggleOn(selectedImageIndex) {
     this.setState({
-      showModal: true
+      showModal: true,
+      modalToggleImage: selectedImageIndex
     });
     document.body.classList.add('no-scroll');
   }
@@ -50,7 +52,7 @@ class Carousel extends React.Component {
     return (
       <React.Fragment>
         <MainCarousel photos={this.state.photos} map={this.state.map} modalToggleOn={this.modalToggleOn} />
-        {this.state.showModal ? <ModalCarousel photos={this.state.photos} map={this.state.map} modalToggleOff={this.modalToggleOff}/> : null}
+        {this.state.showModal ? <ModalCarousel photos={this.state.photos} map={this.state.map} modalToggleOff={this.modalToggleOff} startImage={this.state.modalToggleImage}/> : null}
       </React.Fragment>
     );
   }

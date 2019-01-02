@@ -97,7 +97,7 @@ class MainCarousel extends React.Component {
     return (
       <div id="carousel-body">
         <div className="main-image-area">
-          <ul className="main-image-list" onClick={this.props.modalToggleOn}>
+          <ul className="main-image-list" onClick={() => {this.props.modalToggleOn(this.state.selected)}}>
             <ReactCSSTransitionGroup
               component={React.Fragment}
               transitionName="crossfade"

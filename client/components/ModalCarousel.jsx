@@ -26,15 +26,13 @@ class ModalCarousel extends React.Component {
     };
   }
 
-  // Establish mainImages in component state when the first photos are passed
-  // down as props. Because fetching photos requires an async API request, the
-  // component will likely mount and render before a image is available
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.photos.length > 0 && prevState.mainImages.length === 0) {
+    if (prevState.mainImages.length === 0) {
       return {
-        mainImages: [{ key: 0, url: nextProps.photos[0] }]
+        mainImages: [{ key: 0, url: nextProps.photos[nextProps.startImage] }]
       };
     }
+
     return null;
   }
 
