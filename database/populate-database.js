@@ -11,9 +11,9 @@ const db = require('./index.js');
 ////////////////////////////////////////
 //  Import URL Data in JSON format
 
-const mapUrls = require('./sample_data/map_images.json');
-const floorPlanUrls = require('./sample_data/floor_plan_images.json');
-const apartmentUrls = require('./sample_data/apartment_images.json');
+const mapUrls = require('./sample-data/map_images.json');
+const floorPlanUrls = require('./sample-data/floor_plan_images.json');
+const apartmentUrls = require('./sample-data/apartment_images.json');
 
 ////////////////////////////////////////
 //  Helper Functions
