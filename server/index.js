@@ -15,6 +15,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
+const compression = require('compression');
 
 // Import API Key
 const { MAPBOX_API_KEY } = require('../config.js');
@@ -27,6 +28,7 @@ const db = require('../database/index.js');
 // Apply middleware
 app.use(morgan('dev'));
 app.use(bodyParser.json());
+app.use(compression());
 
 ////////////////////
 //  Serve Routes
