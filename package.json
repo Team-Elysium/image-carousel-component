@@ -9,7 +9,8 @@
     "test-database": "mocha ./database/database.test.js",
     "start-dev": "(mongod > /dev/null & ) && (nodemon server/ server/index.js)",
     "start": "(mongod > /dev/null & ) && (node server/index.js)",
-    "build": "webpack -d --watch"
+    "build-dev": "webpack -d --watch",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "babel-preset-react": "^6.24.1",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "chromedriver": "^2.45.0",
     "eslint": "^5.10.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
@@ -38,6 +40,7 @@
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
     "mocha": "^5.2.0",
+    "nightwatch": "^1.0.18",
     "prettier": "^1.15.3",
     "react-test-renderer": "^16.7.0",
     "request-promise-native": "^1.0.5",
@@ -48,7 +51,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
-    "dotenv": "^6.2.0",
+    "compression": "^1.7.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.0",
     "morgan": "^1.9.1",
