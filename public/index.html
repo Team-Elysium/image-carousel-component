@@ -1,14 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Image Carousel Component</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="carousel-style.css" />
-</head>
-<body>
-  <div id="carousel-container"></div>
-</body>
-<script src="bundle.js"></script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Image Carousel Component</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="carousel-style.css"
+    />
+  </head>
+  <body>
+    <div id="carousel-container">
+      <div id="carousel-body">
+        <div class="main-image-area">
+          <ul class="main-image-list">
+            <li class="main-image-list-item">
+              <img
+              class="main-image"
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="carousel-thumb-container">
+          <ul class="thumb-list">
+          </ul>
+          <div class="button-container">
+            <div class="floor-plan-button">
+              <span class="button-text" >Floor Plan</span>
+            </div>
+            <div class="map-button">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="bundle.js"></script>
 </html>
