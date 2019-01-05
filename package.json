@@ -9,7 +9,8 @@
     "test-database": "mocha ./database/database.test.js",
     "start-dev": "(mongod > /dev/null & ) && (nodemon server/ server/index.js)",
     "start": "(mongod > /dev/null & ) && (node server/index.js)",
-    "build": "webpack -d --watch"
+    "build-dev": "webpack -d --watch",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
