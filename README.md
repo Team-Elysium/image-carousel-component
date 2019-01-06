@@ -7,6 +7,14 @@ This repository contains the source for a single component of a real estate list
 
 For this project, a team of developers each contributed individual components which were combined into a full listing page. To view the complete listing application, check out the related [listing page repo](https://github.com/Team-Elysium/streeteasy-listing-proxy-server-jte).
 
+## Readme Contents
+
+- [Requirements and Dependencies](## Requirements)
+- [Development Setup and Server Provisioning](## Development Setup and Server Provisioning)
+- [Performance Optimizations](## Performance Optimizations)
+- [API Documentation](## API Documentation)
+- [Visual Comparison](## Visual Comparison)
+
 ## Related Repositories
 
 - Complete Listing Page
@@ -88,6 +96,40 @@ This project includes a restful API to provide image URLs to the component. For 
 
 [Image Carousel API Documentation](documentation/api-documentation.md)
 
+## Visual Comparison
+
+The New York City real estate website streeteasy.com was used as a model for the project. The following screenshots show the degree of similarity achived and greater development time would further reduce visual differences:
+
+### Desktop View:
+
+Reference:
+
+![desktop-view-reference](documentation/images/desktop-view-reference.png)
+
+Project:
+
+![desktop-view-project](documentation/images/desktop-view-project.png)
+
+### Modal View:
+
+Reference:
+
+![modal-view-reference](documentation/images/modal-view-reference.png)
+
+Project:
+
+![modal-view-project](documentation/images/modal-view-project.png)
+
+### Mobile View:
+
+Reference:
+
+![mobile-view-reference](documentation/images/mobile-view-reference.png)
+
+Project:
+
+![mobile-view-project](documentation/images/mobile-view-project.png)
+
 ## Authors
 
 * **Jared Ellison** - [jaredellison.net](http://jaredellison.net)
@@ -98,7 +140,7 @@ This project includes a restful API to provide image URLs to the component. For 
   - [Sujin Lee](https://github.com/slee1016)
   - [Austin Joo](https://github.com/AustinJoo)
   - [Muhammad Mosaad](https://github.com/mowithafro)
-- **Technical Mentors**
+- **Technical Mentors** - *Provided instruction and guidance on JS fundamentals and project architecture*
   - [Joseph Martin](https://github.com/jpranaymartin)
   - [Trent Going](https://github.com/trentgoing)
 
