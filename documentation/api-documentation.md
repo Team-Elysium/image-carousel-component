@@ -1,17 +1,15 @@
 # Image Carousel API
 
-The image carousel API is accessible at the url: `/api/:id` where `:id` is a parameter of value 0 to 99.
+The image carousel API is accessible at the url: `/api/carousel/:id` where `:id` is a parameter of value 0 to 99.
 
 GET requests to this URL receive JSON data that provides urls for all the images in one real estate listing's image carousel. A GET request to the API should return a JSON object with `id`, `photos`, `floorPlan` and `map` properties. Each object should have a `floorPlan` and `map` url. The length of  `photos` will vary per listing but there should be at least one photo.
 
 Note that the `id` number of a listing roughly corresponds to its market value. Lower `id` numbers will have less photos of fairly basic properties, higher numbers will have more photos of more glamourous listings.
 
-Other properties may appear in the returned JSON but they are not supported.
-
 An example response for a low `id`:
 
 ```bash
-$ curl http://localhost:3010/api/0
+$ curl http://localhost:3010/api/carousel/0
 {
   id: 0,
 
@@ -30,7 +28,7 @@ $ curl http://localhost:3010/api/0
 An example response for a higher `id`:
 
 ```bash
-$ curl http://localhost:3010/api/99
+$ curl http://localhost:3010/api/carousel/99
 {
   id: 99,
 
