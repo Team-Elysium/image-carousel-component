@@ -18,7 +18,7 @@ For this project, a team of developers each contributed individual components wh
 ## Related Repositories
 
 - Complete Listing Page
-  - [Full Listing Proxy Server](https://github.com/Team-Elysium/streeteasy-listing-proxy-server-jte)
+  - [Full Listing Proxy Server](https://github.com/Team-Elysium/real-estate-listing-page)
 
 - Related Components on Listing Page
   - [Listing Details Component](https://github.com/Team-Elysium/listing-details)
