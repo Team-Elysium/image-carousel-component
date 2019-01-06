@@ -1,24 +1,43 @@
 #!/usr/bin/env bash
 
-# This script is to be run when deploying this component to a new Ubuntu 18.04 server
-# instance once node, git and mongo have been installed.
+# Install MongoDB, Node.js and npm
+printf "\n\n -------- Installing MongoDB, Node.js and npm -------- \n\n"
+sudo apt update
+sudo apt install -y mongodb nodejs npm
 
-# This script should be run as a superuser and it has not yet been tested, it is here for
-# reference only.
+# Install npm Forever process manager module globaly to run server
+printf "\n\n -------- Installing Forever -------- \n\n"
+sudo npm install forever -g
 
-# Map HTTP requests at external port 80 to internal node port 3010
-echo "iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3010" >> /etc/rc.local
-
-# Install node dependencies
+# Install npm dependencies
+printf "\n\n -------- Installing Node Dependencies -------- \n\n"
 rm package-lock.json
 npm install
 
-# Create a config file to store API key
-echo "Please a enter MapBox API key:"
+# Populate database with randomized real-estate listings
+printf "\n\n -------- Populating Database -------- \n\n"
+node database/populate-database.js
+
+# Create config.js with MapBox API key
+printf "\n\n -------- Creating Config File -------- \n\n"
+echo " This project requires a mapbox api key. To get one, visit https://www.mapbox.com/signup"
+echo " Please a enter your API key:"
 read API_KEY
 echo "module.exports.MAPBOX_API_KEY = '$API_KEY';" > config.js
 
-# Create the webpack bundle
+# Run Webpack to Transpile React application
+printf "\n\n -------- Bundling JS Client App -------- \n\n"
 npm run-script build
 
-echo "Setup Complete: run the command 'sudo npm start' to start the server"
+# Make rc.local script executable and copy to /etc directory
+printf "\n\n -------- Copying rc.local script to /etc/rc.local -------- \n\n"
+sudo chmod +x deployment/rc.local
+sudo cp deployment/rc.local /etc
+
+# Run rc.local to map port 80 to 3000, start MongoDB
+# and Express.js web server using Forerver process manager
+sudo /etc/rc.local
+
+printf "\n\n -------- Setup Complete -------- \n\n"
+echo " To view page, direct browser to a page with an id # from 0-99
+echo " http://public-domain.com/0 -> http://public-domain.com/99"
