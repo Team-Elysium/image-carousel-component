@@ -9,11 +9,11 @@ For this project, a team of developers each contributed individual components wh
 
 ## Readme Contents
 
-- [Requirements and Dependencies](##Requirements)
-- [Development Setup and Server Provisioning](##DevelopmentSetupandServerProvisioning)
-- [Performance Optimizations](##PerformanceOptimizations)
-- [API Documentation](##APIDocumentation)
-- [Visual Comparison](##VisualComparison)
+- [Requirements and Dependencies](#requirements)
+- [Development Setup and Server Provisioning](#development-setup-and-server-provisioning)
+- [Performance Optimizations](#performance-optimizations)
+- [API Documentation](#api-documentation)
+- [Visual Comparison](#visual-comparison)
 
 ## Related Repositories
 
