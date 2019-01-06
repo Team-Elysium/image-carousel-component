@@ -76,13 +76,13 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse/) perfo
 
 - Implementing gzip compression
 
-  - The [compression](https://www.npmjs.com/package/compression) node module was used Express.js middleware to compress text files and Lighthouse showed that a *First Contentful Paint* could be achived ~10s faster:
+  - The node module [compression](https://www.npmjs.com/package/compression) was used as Express.js middleware to compress text files and Lighthouse showed that a *First Contentful Paint* could be achived ~10s faster:
 
     ![performance-2](documentation/images/performance-2.png)
 
 - Using webpack production bundling
 
-  - Even with gzip compression, the main application file `bundle.js` was still the largest resource slowing page load. The project's React components were being transpiled into `bundle.js` using the webpack command `webpack -d --watch` to create a bundle that would be updated as source files changed and transpiled in to a human readable development file. By running webpack with `webpack -p` it is possible to create a minified bundle for production. This decreased the uncompressed size of bundle.js from **2.43 MB** to **148KB** - more than an order of magnitude. With a minified and compressed `bundle.js` the time to First Meaningful Paint was reduced to 1.5s:
+  - Even with gzip compression, the main application file `bundle.js` was still the largest resource slowing page load. The project's React components were being transpiled into `bundle.js` using the webpack command `webpack -d --watch` to create a bundle that would be updated as source files changed and transpiled in to a human readable development file. By running webpack with `webpack -p` it is possible to create a minified bundle for production. This decreased the uncompressed size of bundle.js from **2.43 MB** to **148KB** - more than an order of magnitude. With a minified and compressed `bundle.js` the time to *First Contentful Paint* was reduced to 1.5s:
 
     ![performance-3](documentation/images/performance-3.png)
 
