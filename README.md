@@ -1,5 +1,5 @@
 # image-carousel-component
-> Image Carousel Component for Real Estate Listing Page
+> Image carousel component for real estate listing page
 
 ![component-screen-capture](documentation/images/component-screen-capture.gif)
 
