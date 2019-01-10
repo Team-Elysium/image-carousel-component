@@ -6,22 +6,20 @@
 //  Import dependencies and connect to db
 
 const mongoose = require('mongoose');
+const {Schema} = require('mongoose');
 
-mongoose.Promise = Promise;
 
 ////////////////////////////////////////
 //  Define Schema and create model
 
 // Schema
-const listingImagesSchema = new mongoose.Schema({
+const listingImagesSchema = new Schema({
   id: { type: Number, unique: true, required: true },
   map: { type: String, required: true },
   floorPlan: { type: String, required: true },
   photos: { type: [String], required: true }
-});
+}/*,{safe:{ j:0,w: 0, wtimeout: 10000 }*/);
 
 // Model
-const ListingImages = mongoose.model('ListingImages', listingImagesSchema);
+module.exports = mongoose.model('ListingImages', listingImagesSchema);
 
-module.exports.listingImagesSchema = listingImagesSchema;
-module.exports.ListingImages = ListingImages;

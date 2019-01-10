@@ -6,7 +6,11 @@
 //  Import database Model
 
 // Import db to create a database connection
-const db = require('./index.js');
+const db = require('./config.js');
+
+
+//test time:
+let timeInit = Date.now()
 
 ////////////////////////////////////////
 //  Import URL Data in JSON format
@@ -148,8 +152,11 @@ db.ListingImages.deleteMany({}, err => {
       console.log('Updated database with new randomized listing entries');
       // Close db connection when done saving all models
       db.connection.close();
+      console.log('time on record stored: ',Date.now()-timeInit);
     })
     .catch(err => {
       console.log('Error saving to database', err);
+      console.log('time on error: ',Date.now()-timeInit);
     });
+    
 });
