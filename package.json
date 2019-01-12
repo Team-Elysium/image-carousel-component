@@ -59,6 +59,7 @@
     "mongoose": "^5.4.0",
     "morgan": "^1.9.1",
     "path": "^0.12.7",
+    "pg": "^7.8.0",
     "react": "^16.7.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.7.0",

@@ -4,14 +4,14 @@
 
 //import db connection and schema
 
-const {MongoClient} = require('mongodb');
+const { MongoClient } = require('mongodb');
 
+//declare const vars
 
+const TARGET_RECORDS = 2000000 //10M change this value to generate that number of records
+const BATCH_QTY = 10;         //change this to divide the total number of records to batches of equal size
+const timeInit = Date.now();
 
-
-const ListingRecord = require('./schema');
-
-const filesDir = 'database/bin';
 ////////////////////////////////////////
 
 //generate a random index for getting file reference
@@ -20,88 +20,81 @@ const getRandomInt = (length) => Math.floor(Math.random() * length);
 
 // Produce a single listing
 const generateListing = (id) => {
-  return {
-    id: id,
-    map: `({map.json : imgs[${getRandomInt(17)}]})`,
-    floorPlan: `({floorPlan.json : imgs[${getRandomInt(6)}]})`,
-    photos: {
-      //format: {filepath: index on binArray}
-      'exterior': `imgs[${getRandomInt(24)}]})`,
-      'kitchen': `imgs[${getRandomInt(20)}]})`,
-      'bedroom': `imgs[${getRandomInt(22)}]})`,
-      'bathroom': `imgs[${getRandomInt(23)}]})`,
-      'livingroom': `imgs[${getRandomInt(24)}]})`,
-      'amenities': `imgs[${getRandomInt(29)}]})`
+  //format: {filepath: index on binArray}
+  return `{
+    'id': ${id},
+    'imgs': {
+      'map': getRandomInt(17),
+      'floorPlan': getRandomInt(6),
+      'exterior': getRandomInt(24),
+      'kitchen': getRandomInt(20),
+      'bedroom': getRandomInt(22),
+      'bathroom': getRandomInt(23),
+      'livingroom': getRandomInt(24),
+      'amenities': getRandomInt(29)
     }
-  };
+  }`;
 };
 
+let batchNum = 1;
 //create a batch of listings
-const getListings=(num)=>{
-  let counter =0;
-  let batch=[];
+const getWritingOps = (num) => {
+  let counter = 0;
+  let batch = [];
   while (counter < num) {
-    batch.push(generateListing(counter));
-    counter++;
+    let docStr='';      
+    do{      
+      docStr+=generateListing(counter)+'~';
+      counter++;     
+    } while(counter%1000!==1);    
+    batch.push({docStr});
   }
-  return batch;
+  console.log('batch in #:', batchNum, ' is ready! Time: ', Math.round(Date.now() - timeInit))
+  batchNum++;
+  return batch.map(doc=>({'insertOne':doc}));
 }
 
 
-const insertDocuments = (db,callback)=> {
+const insertDocuments = (db, callback) => {
   // Get the documents collection
   const collection = db.collection('listingImages');
   // Insert some documents
-  collection.insertMany(getListings(TARGET_RECORDS) , function(err, result) {
-    if(err)console.log('error inserting: ',err)    
-    callback(result);
-  });
+  let counter = 0;
+  while (counter < BATCH_QTY) {
+    collection.bulkWrite(getWritingOps(TARGET_RECORDS/BATCH_QTY,{ordered:false}), function (err, result) {
+      if (err) console.log('error inserting: ', err)
+      callback(result);
+    });
+    counter++;
+  }
 }
+
 
 const connectionPArams = {
   useNewUrlParser: true,
   fsync: false,
   w: 0,
-  j: 0,
-  bufferMaxEntries: -1
+  j: false,
+  bufferMaxEntries: -1,
+  poolSize: BATCH_QTY
 }
 
-let TARGET_RECORDS = 100000 // change this value to generate that number of records
-let timeInit = Date.now();
 
-MongoClient.connect('mongodb://localhost:27017',connectionPArams,(err,client)=>{
-  if(err)console.log('error connecting to DB') 
- 
+
+
+
+let outputBatch = 1;
+
+MongoClient.connect('mongodb://localhost:27017', connectionPArams, (err, client) => {
+  if (err) console.log('error connecting to DB')
+
   const db = client.db('listingImages');
- 
-  insertDocuments(db, function(result) {
-    console.log('Result: ',result);
-    client.close();
 
+  insertDocuments(db, function (result) {
+    console.log('batch out #:', outputBatch, ' ,Time: ', Math.round((Date.now() - timeInit) / 1000), 's');
+    outputBatch++;
   });
-  console.log('time taken to store ', TARGET_RECORDS, 'docs: ', Date.now() - timeInit, 'ms', 'TPS: ', timeInit / 1000 / TARGET_RECORDS)
+
 });
 
-
-  
-  //   let batch = 0;
-//   try {
-//     while (batch < 100) {
-//       modelArray.push(generateListing(counter + batch));
-//       batch++;
-//     }
-//   } catch (unhandledErr) {
-//     console.log('database error: ', unhandledErr);
-//   }
-//   //3. store all docs into DB  
-//   ListingRecord.insertMany(modelArray, null, false, (err, output) => {
-//     if (err) console.log('error storing to DB: ', err, ':::', Date.now() - timeInit, 'ms')
-//   })
-//   batch++;
-//   counter += batch;
-//   console.log('time taken to store ', counter, 'docs: ', Date.now() - timeInit, 'ms', 'TPS: ', timeInit / 1000 / counter)
-
-// }
-// console.log('saved all ', counter, 'docs: ', Date.now() - timeInit, 'ms', 'TPS: ', timeInit / 1000 / counter)
-// db.disconnect()
 
