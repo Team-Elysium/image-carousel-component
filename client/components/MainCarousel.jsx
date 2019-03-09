@@ -6,7 +6,7 @@ class MainCarousel extends React.Component {
     super(props);
     this.state = {
       selected: 0,
-      mainImages: [],
+      mainImages: [{key: 0, url: ''}],
       thumbnailXShift: 0
     };
     // Bind event handlers:
@@ -31,14 +31,14 @@ class MainCarousel extends React.Component {
   // Establish mainImages in component state when the first photos are passed
   // down as props. Because fetching photos requires an async API request, the
   // component will likely mount and render before a image is available
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.photos.length > 0 && prevState.mainImages.length === 0) {
-      return {
-        mainImages: [{ key: 0, url: nextProps.photos[0] }]
-      };
-    }
-    return null;
-  }
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   if (nextProps.photos.length > 0 && prevState.mainImages.length === 0) {
+  //     return {
+  //       mainImages: [{ key: 0, url: nextProps.photos[0] }]
+  //     };
+  //   }
+  //   return null;
+  // }
 
   selectByClick(event) {
     let selection = parseInt(event.target.dataset.thumbId);
@@ -104,13 +104,21 @@ class MainCarousel extends React.Component {
               transitionEnterTimeout={300}
               transitionLeaveTimeout={500}
             >
-              {this.state.mainImages.reverse().map((e, i) => {
-                return (
-                  <li key={e.key} className="main-image-list-item">
-                    <img src={e.url} className="main-image" />
+              {
+                this.state.mainImages.length > 1 ?
+                this.state.mainImages.reverse().map((e) => {
+                  return (
+                    <li key={e.key} className="main-image-list-item">
+                      <img src={e.url} className="main-image" />
+                    </li>
+                  )
+                }):
+                <React.Fragment>
+                  <li key="0" className="main-image-list-item">
+                    <img src={this.props.photos[0]} className="main-image" />
                   </li>
-                );
-              })}
+                </React.Fragment>
+              }
             </ReactCSSTransitionGroup>
           </ul>
         </div>
