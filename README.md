@@ -139,7 +139,7 @@ Project:
 - **Project Team** - *Each contributed similar components to full listing page*
   - [Sujin Lee](https://github.com/slee1016)
   - [Austin Joo](https://github.com/AustinJoo)
-  - [Muhammad Mosaad](https://github.com/mowithafro)
+  - [Muhammad Mosaad](https://github.com/moemosaad/)
 - **Technical Mentors** - *Provided instruction and guidance on JS fundamentals and project architecture*
   - [Joseph Martin](https://github.com/jpranaymartin)
   - [Trent Going](https://github.com/trentgoing)
@@ -149,5 +149,3 @@ Project:
 - [Installing MongoDB on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04)
 - [Installing Node on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04)
 - [ReactCSSTransitionGroup Add-On Documentation](https://reactjs.org/docs/animation.html)
-- [Updating React Component State When Props Change](https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops)
-
