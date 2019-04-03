@@ -6,13 +6,17 @@ class ModalCarousel extends React.Component {
     super(props);
     this.state = {
       selected: 0,
-      mainImages: []
+      mainImages: [{ key: 0, url: "" }]
     };
     // Bind event handlers:
     this.selectNext = this.selectNext.bind(this);
     this.selectPrev = this.selectPrev.bind(this);
     this.selectByClick = this.selectByClick.bind(this);
   }
+
+    componentWillMount(){
+      this.updateMain(this.props.startImageIndex);
+    }
 
   componentDidMount() {
     // Attach global event listeners
@@ -24,16 +28,6 @@ class ModalCarousel extends React.Component {
         return this.selectNext();
       }
     };
-  }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.mainImages.length === 0) {
-      return {
-        mainImages: [{ key: 0, url: nextProps.photos[nextProps.startImageIndex] }]
-      };
-    }
-
-    return null;
   }
 
   selectByClick(event) {
@@ -81,13 +75,15 @@ class ModalCarousel extends React.Component {
               transitionEnterTimeout={300}
               transitionLeaveTimeout={500}
             >
-              {this.state.mainImages.reverse().map((e, i) => {
-                return (
-                  <li key={e.key} className="modal-main-image-list-item">
-                    <img src={e.url} className="modal-main-image" />
-                  </li>
-                );
-              })}
+              {
+                this.state.mainImages.reverse().map((e) => {
+                  return (
+                    <li key={e.key} className="modal-main-image-list-item">
+                      <img src={e.url} className="modal-main-image" />
+                    </li>
+                  )
+                })
+              }
             </ReactCSSTransitionGroup>
           </ul>
         </div>

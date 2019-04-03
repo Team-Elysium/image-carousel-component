@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import axios from 'axios';
 import MainCarousel from './components/MainCarousel.jsx';
 import ModalCarousel from './components/ModalCarousel.jsx'
 
