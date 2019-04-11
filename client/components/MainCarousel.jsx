@@ -156,6 +156,7 @@ class MainCarousel extends React.Component {
           <div className="button-container">
             <div className="floor-plan-button">
               <span
+                id="floor-plan-button-text"
                 className="button-text"
                 data-thumb-id={this.props.photos.length - 2}
                 onClick={this.selectByClick}
