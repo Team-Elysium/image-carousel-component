@@ -332,6 +332,7 @@
   margin: 17px 8px;
   overflow: hidden;
   cursor: pointer;
+  vertical-align: middle;
 }
 
 .modal-main-image {
