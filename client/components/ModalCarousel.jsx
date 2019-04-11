@@ -14,8 +14,16 @@ class ModalCarousel extends React.Component {
     this.selectByClick = this.selectByClick.bind(this);
   }
 
-    componentWillMount(){
-      this.updateMain(this.props.startImageIndex);
+    componentWillMount() {
+      let newMainImages = [];
+      let prevKey = this.state.mainImages.slice(-1)[0].key;
+      let newKey = prevKey + 1;
+      newMainImages.unshift({ key: newKey, url: this.props.photos[this.props.startImageIndex] });
+
+      this.setState({
+        selected: this.props.startImageIndex,
+        mainImages: newMainImages
+      });
     }
 
   componentDidMount() {
@@ -52,6 +60,7 @@ class ModalCarousel extends React.Component {
   }
 
   updateMain(photoIndex) {
+    if (photoIndex === this.state.selected) return;
     let newMainImages = [];
     let prevKey = this.state.mainImages.slice(-1)[0].key;
     let newKey = prevKey + 1;
@@ -98,7 +107,7 @@ class ModalCarousel extends React.Component {
           className="modal-arrow-button modal-arrow-right"
           onClick={this.selectNext}
         >
-          <div className="arrow-button-pointer-right" />
+          <div className="modal-arrow-button-pointer-right" />
         </div>
 
         <div className="modal-carousel-thumb-container">
