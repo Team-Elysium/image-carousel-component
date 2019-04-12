@@ -52,6 +52,7 @@
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   position: relative;
+  user-select: none;
 }
 
 .main-image-area {
