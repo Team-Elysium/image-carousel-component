@@ -420,6 +420,21 @@
 
   .main-image-area {
     margin: 0 auto;
+    height: 250px;
+    width: inherit;
+  }
+
+  .main-image-list {
+    height: inherit;
+  }
+
+  .main-image-list-item {
+    height: inherit;
+    width: 100%;
+  }
+
+  .main-image {
+    height: inherit;
   }
 
   .arrow-button,
@@ -452,7 +467,7 @@
   }
 
   .button-text {
-    padding: 34px 16px 10px 34px;
+    padding: 35px 10%;
   }
 
   .map-button {
