@@ -29,6 +29,12 @@ class Carousel extends React.Component {
         newState.photos.push(json.map);
         this.setState(newState);
       });
+
+    document.onkeydown = key => {
+      if (key.key === 'Escape') {
+        this.modalToggleOff();
+      }
+    };
   }
 
   modalToggleOn(selectedImageIndex) {
