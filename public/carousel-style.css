@@ -337,9 +337,9 @@
 }
 
 .modal-main-image {
-  height: 800px;
+  height: 590px;
   position: absolute;
-  transform: translate(-50%, -55%);
+  transform: translate(-50%, -49%);
   top: 50%;
   left: 50%;
 }
