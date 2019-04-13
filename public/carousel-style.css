@@ -363,30 +363,31 @@
   height: 54px;
   width: 54px;
   border-radius: 54px;
-  border: 1px solid grey;
   box-shadow: 0px 1px 4px 1px #00000017;
   cursor: pointer;
+  background: white;
+  opacity: 0.6;
 }
 
 .modal-arrow-button-pointer-left {
-  border-top: white 2px solid;
-  border-left: white 2px solid;
+  border-top: #a0a0a0 2px solid;
+  border-left: #a0a0a0 2px solid;
   width: 7px;
   height: 7px;
   position: absolute;
-  top: 22px;
+  top: 23px;
   left: 24px;
   transform: rotateZ(-45deg);
 }
 
 .modal-arrow-button-pointer-right {
-  border-top: white 2px solid;
-  border-left: white 2px solid;
+  border-top: #a0a0a0 2px solid;
+  border-left: #a0a0a0 2px solid;
   width: 7px;
   height: 7px;
   position: absolute;
-  top: 22px;
-  left: 22px;
+  top: 23px;
+  left: 23px;
   transform: rotateZ(135deg);
 }
 
@@ -452,6 +453,10 @@
     text-align: center;
     display: inline-block;
     width: 100%;
+  }
+
+  .modal-main-image {
+    height: 385px;
   }
 
   .button-container {
