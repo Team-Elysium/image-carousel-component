@@ -11,3 +11,6 @@ public/bundle.js
 
 # API Keys
 config.js
+
+# Test Coverage
+coverage
