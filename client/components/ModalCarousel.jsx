@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 class ModalCarousel extends React.Component {
   constructor(props) {
@@ -78,7 +78,6 @@ class ModalCarousel extends React.Component {
         <div className="modal-overlay" onClick={this.props.modalToggleOff} />
         <div className="modal-main-image-area">
           <ul className="modal-main-image-list">
-            <ReactCSSTransitionGroup
               component={React.Fragment}
               transitionName="crossfade"
               transitionEnterTimeout={300}
@@ -93,7 +92,6 @@ class ModalCarousel extends React.Component {
                   )
                 })
               }
-            </ReactCSSTransitionGroup>
           </ul>
         </div>
 
