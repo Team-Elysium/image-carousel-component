@@ -10,6 +10,9 @@ const db = {};
 
 const mongoose = require('mongoose');
 
+// Configure mongoose to fix deprecation warning
+mongoose.set('useCreateIndex', true);
+
 mongoose.Promise = Promise;
 
 mongoose.connect(

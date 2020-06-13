@@ -108,6 +108,7 @@ exports[`MainCarousel renders correctly 1`] = `
         <span
           className="button-text"
           data-thumb-id={4}
+          id="floor-plan-button-text"
           onClick={[Function]}
         >
           Floor Plan
@@ -163,7 +164,7 @@ exports[`ModalCarousel renders correctly 1`] = `
     onClick={[Function]}
   >
     <div
-      className="arrow-button-pointer-right"
+      className="modal-arrow-button-pointer-right"
     />
   </div>
   <div
@@ -176,7 +177,7 @@ exports[`ModalCarousel renders correctly 1`] = `
         className="modal-thumb-item"
       >
         <img
-          className="modal-thumb-image modal-thumb-selected"
+          className="modal-thumb-image"
           data-thumb-id={0}
           onClick={[Function]}
           src="https://www.elliman.com/img/19c74783b315fe1a01465c90eea1876d830b02b7+440++1"
