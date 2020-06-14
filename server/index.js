@@ -17,9 +17,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const compression = require('compression');
 
-// Import API Key
-const { MAPBOX_API_KEY } = require('../config.js');
-
 const app = express();
 
 // Import Database Connection
@@ -56,7 +53,7 @@ app.get('/api/carousel/:id', (req, res) => {
         photos: result.photos,
         floorPlan: result.floorPlan,
         // Concatinate mapbox url with API key here
-        map: result.map + MAPBOX_API_KEY
+        map: result.map
       });
     })
     .catch(err => {
