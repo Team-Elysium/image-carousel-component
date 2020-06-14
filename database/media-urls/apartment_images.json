@@ -1,0 +1,199 @@
+{
+  "tier0": {
+    "exterior": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "kitchen": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "bedroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "bathroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "livingroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ]
+  },
+  "tier1": {
+    "exterior": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "kitchen": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "bedroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "bathroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "livingroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "amenities": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ]
+  },
+  "tier2": {
+    "exterior": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "kitchen": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "bedroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "bathroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "livingroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "amenities": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ]
+  },
+  "tier3": {
+    "exterior": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "kitchen": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "bedroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "bathroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "livingroom": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ],
+    "amenities": [
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg",
+      "https://example.com/apartment-photo.jpg"
+    ]
+  }
+}
