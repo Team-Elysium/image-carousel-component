@@ -1,5 +1,5 @@
 import React from 'react';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 class MainCarousel extends React.Component {
   constructor(props) {
@@ -85,29 +85,37 @@ class MainCarousel extends React.Component {
     return (
       <div id="carousel-body">
         <div className="main-image-area">
-          <ul className="main-image-list" onClick={() => {this.props.modalToggleOn(this.state.selected)}}>
-            <CSSTransitionGroup
-              component={React.Fragment}
-              transitionName="crossfade"
-              transitionEnterTimeout={300}
-              transitionLeaveTimeout={500}
-            >
-              {
-                this.state.mainImages.length > 1 ?
-                this.state.mainImages.reverse().map((e) => {
-                  return (
-                    <li key={e.key} className="main-image-list-item">
+          <ul
+            className="main-image-list"
+            onClick={() => {
+              this.props.modalToggleOn(this.state.selected);
+            }}
+          >
+            <TransitionGroup>
+              {this.state.mainImages.length > 1 ? (
+                this.state.mainImages.reverse().map(e => (
+                  <CSSTransition
+                    key={e.key}
+                    classNames="crossfade"
+                    timeout={{ enter: 300, exit: 500 }}
+                  >
+                    <li className="main-image-list-item">
                       <img src={e.url} className="main-image" />
                     </li>
-                  )
-                }):
-                <React.Fragment>
-                  <li key="0" className="main-image-list-item">
+                  </CSSTransition>
+                ))
+              ) : (
+                <CSSTransition
+                  key="0"
+                  classNames="crossfade"
+                  timeout={{ enter: 300, exit: 500 }}
+                >
+                  <li className="main-image-list-item">
                     <img src={this.props.photos[0]} className="main-image" />
                   </li>
-                </React.Fragment>
-              }
-            </CSSTransitionGroup>
+                </CSSTransition>
+              )}
+            </TransitionGroup>
           </ul>
         </div>
 

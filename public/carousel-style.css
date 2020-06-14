@@ -96,11 +96,11 @@
   transition: opacity 300ms ease-in;
 }
 
-.crossfade-leave {
+.crossfade-exit {
   opacity: 1;
 }
 
-.crossfade-leave.crossfade-leave-active {
+.crossfade-exit.crossfade-exit-active {
   opacity: 0.01;
   transition: opacity 500ms ease-in;
 }

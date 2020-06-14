@@ -1,5 +1,5 @@
 import React from 'react';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 class ModalCarousel extends React.Component {
   constructor(props) {
@@ -78,20 +78,19 @@ class ModalCarousel extends React.Component {
         <div className="modal-overlay" onClick={this.props.modalToggleOff} />
         <div className="modal-main-image-area">
           <ul className="modal-main-image-list">
-              component={React.Fragment}
-              transitionName="crossfade"
-              transitionEnterTimeout={300}
-              transitionLeaveTimeout={500}
-            >
-              {
-                this.state.mainImages.reverse().map((e) => {
-                  return (
-                    <li key={e.key} className="modal-main-image-list-item">
-                      <img src={e.url} className="modal-main-image" />
-                    </li>
-                  )
-                })
-              }
+            <TransitionGroup>
+              {this.state.mainImages.reverse().map(e => (
+                <CSSTransition
+                  key={e.key}
+                  classNames="crossfade"
+                  timeout={{ enter: 300, exit: 500 }}
+                >
+                  <li className="modal-main-image-list-item">
+                    <img src={e.url} className="modal-main-image" />
+                  </li>
+                </CSSTransition>
+              ))}
+            </TransitionGroup>
           </ul>
         </div>
 
@@ -132,8 +131,7 @@ class ModalCarousel extends React.Component {
               className="modal-floor-plan-button"
               data-thumb-id={this.props.photos.length - 2}
               onClick={this.selectByClick}
-            >
-            </li>
+            />
             <li className="modal-map-button">
               <img
                 src={this.props.map ? this.props.map : null}
