@@ -52,7 +52,6 @@ app.get('/api/carousel/:id', (req, res) => {
         id: result.id,
         photos: result.photos,
         floorPlan: result.floorPlan,
-        // Concatinate mapbox url with API key here
         map: result.map
       });
     })
