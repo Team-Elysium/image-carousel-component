@@ -14,3 +14,6 @@ config.js
 
 # Test Coverage
 coverage
+
+# Media Folder
+public/assets/images/photos
