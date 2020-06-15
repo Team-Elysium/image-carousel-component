@@ -27,10 +27,6 @@ For this project, a team of developers each contributed individual components wh
 
 ## Requirements
 
-#### External API Key
-
-- This project makes use of the MapBox API to access static map images. To get an API key visit: https://www.mapbox.com/signup
-
 #### Key Dependencies
 
 - [Node.js](https://nodejs.org/en/) with [Express.js](https://expressjs.com/) web framework
@@ -49,9 +45,8 @@ For this project, a team of developers each contributed individual components wh
 1. Create a server instance to run the project on - **Ubuntu Server 18.04 LTS** is recommended
 2. On the server, allow traffic on ports 22 for SSH and 80 for HTTP access
 3. Connect to the server via SSH and run `git clone https://github.com/Team-Elysium/image-carousel-component` to retrieve the project repo
-4. Navigate into the repo with `cd image-carousel-component` 
+4. Navigate into the repo with `cd image-carousel-component`
 5. Run `sudo chmod +x deployment/deploy.sh && sudo deployment/deploy.sh`  to run the deployment script and provision the server. This script will do the do the following:
-   - Create `config.js` with a MapBox API key
    - Install MongoDB, Node.js and npm
    - Install npm Forever process manager module globally to run server
    - Install npm dependencies

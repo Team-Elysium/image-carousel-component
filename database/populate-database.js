@@ -11,9 +11,9 @@ const db = require('./index.js');
 ////////////////////////////////////////
 //  Import URL Data in JSON format
 
-const mapUrls = require('./sample-data/map_images.json');
-const floorPlanUrls = require('./sample-data/floor_plan_images.json');
-const apartmentUrls = require('./sample-data/apartment_images.json');
+const mapUrls = require('./asset-paths/map_images.json');
+const floorPlanUrls = require('./asset-paths/floor_plan_images.json');
+const apartmentUrls = require('./asset-paths/apartment_images.json');
 
 ////////////////////////////////////////
 //  Helper Functions
@@ -38,9 +38,9 @@ const generateListing = (id, tier) => {
   // Attach an id and tier
   listing.id = id;
   // Attach a map Url
-  listing.map = getRandomElements(mapUrls.urls);
+  listing.map = getRandomElements(mapUrls.urls)[0];
   // Attach a floor plan url
-  listing.floorPlan = getRandomElements(floorPlanUrls.urls);
+  listing.floorPlan = getRandomElements(floorPlanUrls.urls)[0];
   // Attach apartment photos
   listing.photos = getApartmentPhotosByTier(tier);
   return listing;
