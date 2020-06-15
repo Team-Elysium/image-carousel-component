@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# Create config.js with MapBox API key
-printf "\n\n -------- Creating Config File -------- \n\n"
-echo " This project requires a mapbox api key. To get one, visit https://www.mapbox.com/signup"
-echo " Please a enter your API key or press enter to continue without one (map GET requests will be denied):"
-read API_KEY
-echo "module.exports.MAPBOX_API_KEY = '$API_KEY';" > config.js
-
 # Install MongoDB, Node.js and npm
 printf "\n\n -------- Installing MongoDB, Node.js and npm -------- \n\n"
 sudo apt update
